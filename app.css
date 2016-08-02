@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+h1{
+	font-family: Lobster;
+	text-align: center;
+	font-size: 50px;
+    color: blue
+}
+body {
+    background-color: #33ffad;
+}
+
+#select{
+    text-align: center;
+}
+#map{
+    height: 175px;
+    width: 100%;
+}#name {
+    margin-left: 20px;
+}
+
+#alltrips {
+    margin-left: 20px;
+}
+
+.trip {
+    display: inline-block;
+    margin-left: 20px;
+}
