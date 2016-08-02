@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<link rel="stylesheet" href="Selection.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="Selection.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+ 	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+  
+ 	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> 
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCtZ8bhfjefEi-k8SvEKqtfb1oqlqx3TZ8",
+	    authDomain: "final-project-fl-mm-lo.firebaseapp.com",
+	    databaseURL: "https://final-project-fl-mm-lo.firebaseio.com",
+	    storageBucket: "final-project-fl-mm-lo.appspot.com",
+	  };
+	  firebase.initializeApp(config);
+	</script>
+	<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+	<!-- Include the jQuery library -->
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+	<!-- Include the jQuery Mobile library -->
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+
+  <body>
+  	<div id = "select">
+  		<h2>SELECT:<h2>  	
+  	</div>
+  	<!-- <div class="checkbox">
+	  <label><input type="checkbox" value="">Nature</label>
+	</div>
+	<div class="checkbox">
+	  <label><input type="checkbox" value="">Shopping</label>
+	</div>
+	<div class="checkbox">
+	  <label><input type="checkbox" value="">Food</label>
+	</div>
+	<div class="checkbox">
+	  <label><input type="checkbox" value="">Popular Attrations</label>
+	</div>
+	<div class="checkbox">
+	  <label><input type="checkbox" value="">Historic Places</label>
+	</div>
+	<div class="checkbox">
+	  <label><input type="checkbox" value="">All</label>
+	</div>
+	<div>
+		<input type="submit" value="Submit">
+	</div> -->
+
+
+  	<div class = "selection">
+	  	<form action="" method = "get">
+	  		<div class="checkbox">
+				<label><input type="checkbox" name="choice" value="nature">Nature<label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" name="choice" value="shopping">Shopping<label>
+			</div>
+			<div class="checkbox">
+			<label><input type="checkbox" name="choice" value="food">Food<label>
+			</div>
+			<div class="checkbox">
+			<label><input type="checkbox" name="choice" value="popularattractions">Popular Attractions<label>
+			</div>
+			<div class="checkbox">
+			<label><input type="checkbox" name="choice" value="historicplaces">Historic Places<label>
+			</div>
+			<div class="checkbox">
+			<label><input type="checkbox" name="choice" value="all">All<label>
+			</div>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+  </body>
+</html>
