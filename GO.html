@@ -4,6 +4,17 @@
     <link rel="stylesheet" href="GO.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="GO.js"></script>
+    <section id="wrapper">
+
+
+
+    <article>
+
+    </article>
+
+
+
+</section>
 
 <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
@@ -36,6 +47,12 @@
 
 </head>
 <body>
+
+<script>
+
+</script>
+
+  
      <style>
        #map {
         width: 100%;
@@ -44,18 +61,45 @@
     </style>
   </head>
   <body>
+
+   
     <div id="map"></div>
     <script>
+
       function initMap() {
         var mapDiv = document.getElementById('map');
         var map = new google.maps.Map(mapDiv, {
             center: {lat: 44.540, lng: -78.546},
             zoom: 8
         });
-      }
+
+}
+var marker = new google.maps.Marker({
+          position: 'showPosition',
+          map: map,
+          Title: 'Adobe SF',
+          icon: image
+        });
+
+
+
+var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude; 
+};
+ marker.setMap();
+
     </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=
+   
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=
 AIzaSyDMyLI-OWdk0I8fbQcZriVExwlh8bwgC-0&callback=initMap">
     </script>
 
