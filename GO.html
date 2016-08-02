@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="GO.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="GO.js"></script>
+    <section id="wrapper"></section>
 
 <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
@@ -33,9 +34,7 @@
 
 <!-- Include the jQuery Mobile library -->
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-</head>
-<body>
+  
      <style>
        #map {
         width: 100%;
@@ -43,19 +42,23 @@
       }
     </style>
   </head>
-  <body>
+  <body>  
     <div id="map"></div>
     <script>
+<<<<<<< HEAD
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
+=======
+>>>>>>> ea220d78b2ad06d010beb89c248230a70c53737d
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 6
         });
+<<<<<<< HEAD
         var infoWindow = new google.maps.InfoWindow({map: map});
 
         // Try HTML5 geolocation.
@@ -87,9 +90,36 @@
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+=======
+
+}
+var marker = new google.maps.Marker({
+          position: 'showPosition',
+          map: map,
+          Title: 'Adobe SF',
+          icon: image
+        });
+
+
+
+var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude; 
+};
+ marker.setMap();
+
+>>>>>>> ea220d78b2ad06d010beb89c248230a70c53737d
     </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=
+   
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=
 AIzaSyDMyLI-OWdk0I8fbQcZriVExwlh8bwgC-0&callback=initMap">
     </script>
 
