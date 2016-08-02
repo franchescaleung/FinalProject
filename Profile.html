@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<link rel="stylesheet" href="Profile.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="Profile.js"></script>
+    <title>Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
- 	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
-  	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
-  	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <!-- jquery links -->
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- // <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
 
-  
- 	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> 
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyCtZ8bhfjefEi-k8SvEKqtfb1oqlqx3TZ8",
-	    authDomain: "final-project-fl-mm-lo.firebaseapp.com",
-	    databaseURL: "https://final-project-fl-mm-lo.firebaseio.com",
-	    storageBucket: "final-project-fl-mm-lo.appspot.com",
-	  };
-	  firebase.initializeApp(config);
-	</script>
-	<!-- Include meta tag to ensure proper rendering and touch zooming -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- firebase links -->
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" />
 
-	<!-- Include jQuery Mobile stylesheets -->
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- custom app links -->
+    <script type="text/javascript" src="firebase.js"></script>
+    <script type="text/javascript" src="map.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
 
-	<!-- Include the jQuery library -->
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-	<!-- Include the jQuery Mobile library -->
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   </head>
 
   <body>
