@@ -6,16 +6,12 @@ h1{
 	font-size: 50px;
     color: blue
 }
-body {
-    background-color: #33ffad;
-}
 
-#select{
-    text-align: center;
-}
 #map{
-    height: 175px;
+    height: 450px;
     width: 100%;
+
+/*profile*/
 }#name {
     margin-left: 20px;
 }
@@ -28,6 +24,8 @@ body {
     display: inline-block;
     margin-left: 20px;
 }
+
+/*nearby*/
 .nearby {
     display: inline-block;
 }
@@ -35,4 +33,82 @@ body {
 .place1 {
     margin: auto;
     display: inline;
+}
+<<<<<<< HEAD
+
+/*selection*/
+body {
+}
+#select{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    padding-top: 30px;
+}
+#search {
+    font-size: 30px;
+    padding-left: 90px;
+    margin-bottom:20px;
+    width: 400px;
+}
+.checkbox {
+    width: 400px;
+    font-size: 30px;
+    margin: 10px;
+}
+#submit {
+    font-size: 30px;
+    margin-left:130px;
+    bottom: 10%;
+}
+/*GO/homepage*/
+.navigator{
+
+    display: inline-block;
+    width: 24%;
+    font-size: 20px;
+    list-style: none;
+    margin: none;
+    padding: none;
+    color: gray;
+    background-color: gray;
+    height: 100px;
+}
+
+.prof{
+    margin: 0px;
+    padding-top: none;
+    padding-bottom: none;
+    font-size: 20px;
+    text-align: center;
+}
+.icon{
+    margin: 0px;
+    display: inline-block;
+    width:60px;
+    height: 60px;
+}
+.select{
+    margin: 0px;
+    padding-top: none;
+    padding-bottom: none;
+    font-size: 20px;
+    text-align: center;
+}
+.style-icon{
+    display: inline-block;
+    padding-top: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #D7DAFF;
+    margin: -8px;
+    text-align: center;
+    width: 23.7%;
+}
+.GO{
+    padding-top: none;
+    padding-bottom: none;
+    font-size: 20px;
+    text-align: center;
+    margin: 0px;
 }
