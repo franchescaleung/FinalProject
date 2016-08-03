@@ -1,67 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
 h1{
-    font-family: Lobster;
-    text-align: center;
-    font-size: 50px;
-    color: blue
-}
-body {
-    background-color: #33ffad;
-}
-
-#select{
-    text-align: center;
-}
-#map{
-    height: 400px;
-    width: 100%;
-}#name {
-    margin-left: 20px;
-}
-
-#alltrips {
-    margin-left: 20px;
-}
-
-.trip {
-    display: inline-block;
-    margin-left: 20px;
-}
-.nearby {
-    display: inline-block;
-}
-
-.place1 {
-    margin: auto;
-    display: inline;
-}
-.navigator{
-
-    display: inline-block;
-    width: 24%;
-    font-size: 20px;
-    list-style: none;
-    margin: none;
-    padding: none;
-    color: gray;
-    background-color: gray;
-    height: 100px;
-}
-.div{
-
-    width: 10
-    text-align: center;
-}
-
-
-
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Lobster');
-
-h1{
 	font-family: Lobster;
 	text-align: center;
 	font-size: 50px;
@@ -87,15 +26,47 @@ h1{
 }
 
 /*nearby*/
-.nearby {
-    display: inline-block;
+#nearby {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    padding-top: 20px;
 }
 
-.place1 {
-    margin: auto;
-    display: inline;
+.place {
+    display: inline-block;
+    width: 165px; 
+    margin: 10px;
 }
-<<<<<<< HEAD
+.image {
+    display: block;
+    width: 100%;
+}
+.add {
+    width: 20px;
+}
+.desciption {
+    display: block;
+}
+
+
+/*map*/
+.navigator{
+    display: inline-block;
+    width: 24%;
+    font-size: 20px;
+    list-style: none;
+    margin: none;
+    padding: none;
+    color: gray;
+    background-color: gray;
+    height: 100px;
+}
+.div{
+
+    width: 10;
+    text-align: center;
+}
 
 /*selection*/
 body {
@@ -121,7 +92,7 @@ body {
     font-size: 30px;
     margin-left:130px;
     bottom: 10%;
-=======
+}
 .navigator{
 
     display: inline-block;
@@ -135,8 +106,6 @@ body {
     height: 100px;
 }
 .div{
-
     width: 10
     text-align: center;
->>>>>>> b694e0c3a62823969aedd5a7aa39d04cb8f90ed6
 }
