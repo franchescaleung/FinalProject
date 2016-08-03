@@ -67,7 +67,7 @@ h1{
     width: 10;
     text-align: center;
 }
-=======
+
 .nearby {
     display: inline-block;
 }
@@ -83,8 +83,8 @@ body {
 #select{
     text-align: center;
     font-size: 30px;
-    margin-top: 20px;
-    padding-top: 30px;
+    margin-top: 0px;
+    padding-top: 10px;
 }
 #search {
     font-size: 30px;
@@ -122,20 +122,20 @@ body {
 }
 
 .prof{
-    margin: 0px;
+    margin: -2px;
     padding-top: none;
     padding-bottom: none;
     font-size: 20px;
     text-align: center;
 }
 .icon{
-    margin: 0px;
+    margin: -2px;
     display: inline-block;
-    width:60px;
-    height: 60px;
+    width:40px;
+    height: 40px;
 }
 .select{
-    margin: 0px;
+    margin: -2px;
     padding-top: none;
     padding-bottom: none;
     font-size: 20px;
@@ -156,5 +156,5 @@ body {
     padding-bottom: none;
     font-size: 20px;
     text-align: center;
-    margin: 0px;
+    margin: -2px;
 }
