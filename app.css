@@ -14,7 +14,7 @@ body {
     text-align: center;
 }
 #map{
-    height: 175px;
+    height: 400px;
     width: 100%;
 }#name {
     margin-left: 20px;
@@ -35,4 +35,21 @@ body {
 .place1 {
     margin: auto;
     display: inline;
+}
+.navigator{
+
+    display: inline-block;
+    width: 24%;
+    font-size: 20px;
+    list-style: none;
+    margin: none;
+    padding: none;
+    color: gray;
+    background-color: gray;
+    height: 100px;
+}
+.div{
+
+    width: 10
+    text-align: center;
 }
