@@ -6,16 +6,12 @@ h1{
 	font-size: 50px;
     color: blue
 }
-body {
-    background-color: #33ffad;
-}
 
-#select{
-    text-align: center;
-}
 #map{
     height: 400px;
     width: 100%;
+
+/*profile*/
 }#name {
     margin-left: 20px;
 }
@@ -28,6 +24,8 @@ body {
     display: inline-block;
     margin-left: 20px;
 }
+
+/*nearby*/
 .nearby {
     display: inline-block;
 }
@@ -36,7 +34,34 @@ body {
     margin: auto;
     display: inline;
 }
-/*GO/home page*/
+<<<<<<< HEAD
+
+/*selection*/
+body {
+}
+#select{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    padding-top: 30px;
+}
+#search {
+    font-size: 30px;
+    padding-left: 90px;
+    margin-bottom:20px;
+    width: 400px;
+}
+.checkbox {
+    width: 400px;
+    font-size: 30px;
+    margin: 10px;
+}
+#submit {
+    font-size: 30px;
+    margin-left:130px;
+    bottom: 10%;
+}
+/*GO/homepage*/
 .navigator{
 
     display: inline-block;
@@ -51,12 +76,9 @@ body {
 }
 .div{
 
-    width: 10;
+    width: 10
     text-align: center;
-}
-.prof-icon{
-    width:60px;
-    height: 60px;
+
 }
 .prof{
     padding-bottom: none;
@@ -66,4 +88,5 @@ body {
 }
 .prof-icon{
     padding-top: none;
-}
+    width:60px;
+    height: 60px;
