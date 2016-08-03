@@ -8,7 +8,7 @@ h1{
 }
 
 #map{
-    height: 450px;
+    height: 460px;
     width: 100%;
 
 /*profile*/
@@ -144,12 +144,14 @@ body {
 .style-icon{
     display: inline-block;
     padding-top: none;
+    padding-bottom: 10px;
     padding-left: 25px;
     padding-right: 25px;
     background-color: #D7DAFF;
     margin: -8px;
     text-align: center;
     width: 23.5%;
+    margin-top: 20px;
 }
 .GO{
     padding-top: none;
@@ -157,4 +159,5 @@ body {
     font-size: 20px;
     text-align: center;
     margin: -2px;
+
 }
