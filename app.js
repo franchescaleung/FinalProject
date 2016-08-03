@@ -14,7 +14,7 @@ var uiConfig = {
 
 window.onload = function(){
     firebaseInit();
-    $('#logout').on('click', firebase.auth().signOut())
+    // $('#logout').on('click', firebase.auth().signOut())
 }
 
 
