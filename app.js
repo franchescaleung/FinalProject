@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var user;
 
 var config = {
@@ -51,3 +52,5 @@ function initMap() {
         zoom: 8
     });
 }
+=======
+>>>>>>> 9e5c68ec7ba6ad976cbdbe0955652a1a674267eb
