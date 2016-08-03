@@ -8,7 +8,7 @@ h1{
 }
 
 #map{
-    height: 400px;
+    height: 450px;
     width: 100%;
 
 /*profile*/
@@ -74,19 +74,41 @@ body {
     background-color: gray;
     height: 100px;
 }
-.div{
 
-    width: 10
-    text-align: center;
-
-}
 .prof{
-    padding-bottom: none;
-    padding-left: 5px;
-    font-size: 20px;
-    font-style: none;
-}
-.prof-icon{
+    margin: 0px;
     padding-top: none;
+    padding-bottom: none;
+    font-size: 20px;
+    text-align: center;
+}
+.icon{
+    margin: 0px;
+    display: inline-block;
     width:60px;
     height: 60px;
+}
+.select{
+    margin: 0px;
+    padding-top: none;
+    padding-bottom: none;
+    font-size: 20px;
+    text-align: center;
+}
+.style-icon{
+    display: inline-block;
+    padding-top: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #D7DAFF;
+    margin: -8px;
+    text-align: center;
+    width: 23.7%;
+}
+.GO{
+    padding-top: none;
+    padding-bottom: none;
+    font-size: 20px;
+    text-align: center;
+    margin: 0px;
+}
