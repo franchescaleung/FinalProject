@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var user;
 
 var config = {
