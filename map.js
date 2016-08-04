@@ -1,12 +1,44 @@
 
-function initMap() {
-    var mapDiv = document.getElementById('map');
-    var map = new google.maps.Map(mapDiv, {
-        center: {lat: 44.540, lng: -78.546},
-        zoom: 8
-});
+     function initMap() {
+        var pyrmont = {lat: 37.771, lng: -122.401662};
 
-var infoWindow = new google.maps.InfoWindow({map: map});
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['food']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+
+
+
    
 
 if (navigator.geolocation) {
@@ -15,7 +47,7 @@ if (navigator.geolocation) {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-
+        var infoWindow = new google.maps.InfoWindow({map: map});
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
         map.setCenter(pos);
@@ -26,7 +58,6 @@ if (navigator.geolocation) {
       // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
     }
-}
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
