@@ -1,13 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
-@import url('https://fonts.googleapis.com/css?family= Roboto');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 
 #select{
+	margin-top: 30px;
+	margin-bottom: 0px;
 	font-family: Lobster;
 }
 
+#search{
+	padding: 0px;
+	font-family: Oswald;
+}
+
 body{
-	background-image: url("right_size.jpg");
+	background-image: url("LILYY.jpg");
+}
+#submit{
+	margin-left: 40px;
 }
 .selection{
-	font-family: Roboto;
+	margin-left: 35px;
+	margin-top: 5px;
+	font-family: Oswald;
 }
