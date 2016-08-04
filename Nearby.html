@@ -23,6 +23,8 @@
     <script type="text/javascript" src="firebase.js"></script>
     <script type="text/javascript" src="map.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="Nearby.js"></script>
+    <link rel="stylesheet" href="Nearby.css">
     <link rel="stylesheet" href="app.css">
 
   </head>
@@ -62,8 +64,29 @@
         <button type="button"><img class = "add" src = "http://www.turnirji.net/images/circle-add.png"/></button>
   			<p6 class = "description">description<p6>
   		</div>
+<!-- icons -->
+      <div class= 'style-icon'>
+      <!-- Profile icon -->
+      <form action="Profile.html">
+       <br><p class='prof'> Profile</p><input type="image" class= 'icon' src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTtrSgqX40jckZU2dJOcnFX-GJS0bzOc8bzkMTtGc606PCdWZKHItTHxQ"></br>
+     </form>
+   </div style-icon>
+   <div class= 'style-icon'>
+    <!-- Categories icon -->
+     <form action="Selection.html">
+       <br><p class='select'> Categories</p><input type="image" class= 'icon' src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-128.png"></br>
+     </form>   
+     </div style-icon>
+     <div class= 'style-icon'>
+      <!-- Map icon -->
+     <form action="GO.html">
+       <br><p class='GO'> Map</p><input type="image" class= 'icon' src="http://marz.kau.edu.sa/Images/525/bebo/WindowsMapsHelper.png"></br>
+     </form>   
+     </div style-icon>
+      
+         
+  </div><!-- /.container-fluid -->
   </body>
   </html>
 
 
-https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&name=cruise&key=YOUR_API_KEY
