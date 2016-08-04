@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family= PT Sans');
+
+#select{
+	font-family: Lobster;
+}
+
+body{
+	background-image: url("right_size.jpg");
+}
+.selection{
+	font-family: PT Sans;
+}

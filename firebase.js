@@ -1,5 +1,4 @@
 var user;
-
 var config = {
     apiKey: "AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4",
     authDomain: "goventure-a3dc4.firebaseapp.com",
@@ -8,7 +7,7 @@ var config = {
 };
 // goventure-a3dc4.appspot.com
 var uiConfig = {
-    'signInSuccessUrl': 'go.html',
+    'signInSuccessUrl': 'GO.html',
     'signInOptions': [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
 };
 
