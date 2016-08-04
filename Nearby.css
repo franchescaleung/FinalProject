@@ -1,11 +1,25 @@
-.nearby {
-	display: inline-block;
+body{
+	background-image: url('');
+}
+#nearby {
+    text-align: center;
+    font-size: 30px;
+    margin-right: 10px;
+    padding-top: 20px;
 }
 
-.place1 {
-	margin: auto;
-	display: inline;
+.place {
+    display: inline-block;
+    width: 190px; 
+    margin: 15px;
 }
-body{
-	background-image: ;
+.image {
+    display: block;
+    width: 100%;
+}
+.add {
+    width: 20px;
+}
+.desciption {
+    display: block;
 }
