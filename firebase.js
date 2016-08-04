@@ -1,4 +1,5 @@
 var user;
+
 var config = {
     apiKey: "AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4",
     authDomain: "goventure-a3dc4.firebaseapp.com",
@@ -13,8 +14,9 @@ var uiConfig = {
 
 window.onload = function(){
     firebaseInit();
-    // $('#logout').on('click', firebase.auth().signOut())
 }
+
+
 
 
 function firebaseInit() {
@@ -30,15 +32,27 @@ function firebaseInit() {
             user = user;
             console.log(user);
             user.getToken().then(function(accessToken) {
-                console.log('signed in');
+                console.log("User " + authData.uid + " is logged in with " + authData.provider);
             });
         } else { // User is signed out.
             user = null;
-            console.log('signed out');
-            // window.location = "Login_Page_GO.html";
-            // redirect to login page;
+            console.log('havent signed in yet');
         }
     }, function(error) {
         console.log(error);
     });
 };
+
+function googleSignout() {
+    // sign out 
+   firebase.auth().signOut()
+   // redirect to login page
+
+   //  tell me in console if it worked
+   .then(function() {
+        window.location = "login.html";
+        console.log('Signout Succesfull')
+   }, function(error) {
+      console.log('Signout Failed')  
+   });
+}

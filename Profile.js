@@ -10,3 +10,9 @@ function writeUserData(userId, name, email, imageUrl) {
 window.onload = function(){
 	writeUserData();
 }
+
+
+
+// ref = new Firebase('goventure-a3dc4.firebaseapp.com');
+// email = ref.getAuth().password.email;
+// console.log(email);
