@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
-@import url('https://fonts.googleapis.com/css?family= PT Sans');
+@import url('https://fonts.googleapis.com/css?family= Roboto');
 
 #select{
 	font-family: Lobster;
@@ -9,5 +9,5 @@ body{
 	background-image: url("right_size.jpg");
 }
 .selection{
-	font-family: PT Sans;
+	font-family: Roboto;
 }

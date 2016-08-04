@@ -12,15 +12,15 @@ var uiConfig = {
     'signInOptions': [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
 };
 
+firebase.initializeApp(config);
+
+
 window.onload = function(){
     firebaseInit();
 }
 
 
-
-
 function firebaseInit() {
-    firebase.initializeApp(config);
 
     // Initialize the FirebaseUI Widget using Firebase.
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -32,7 +32,7 @@ function firebaseInit() {
             user = user;
             console.log(user);
             user.getToken().then(function(accessToken) {
-                console.log("User " + authData.uid + " is logged in with " + authData.provider);
+                console.log("User signed in!");
             });
         } else { // User is signed out.
             user = null;

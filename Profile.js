@@ -1,18 +1,11 @@
-var name;
+var name = firebase.auth().currentUser.displayName
+var email = firebase.auth().currentUser.email
+var profile_pic = firebase.auth().currentUser.photoURL
 
-function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture : ()
-  });
-}
 window.onload = function(){
-	writeUserData();
+    firebase.initializeApp(config);
+    firebaseInit();
+    console.log(name, email, profile_pic)
 }
 
 
-
-// ref = new Firebase('goventure-a3dc4.firebaseapp.com');
-// email = ref.getAuth().password.email;
-// console.log(email);
