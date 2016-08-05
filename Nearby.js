@@ -12,10 +12,17 @@ var longitude = 151.1957362;
 var type = restaurant;
 var name = cruise;
 
-$.ajax({
-  dataType: 'json',
-  url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=latitude,longitude&radius=500&type=type&name=name&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4',
-  success: function(data)
+// $.ajax({
+//   dataType: 'json',
+//   url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=latitude,longitude&radius=500&type=type&name=name&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4',
+//   success: function(data)
+// });
+
+// var photoreference = data.results.photos.photo_reference;
+
+
+$.getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=latitude,longitude&radius=500&type=type&name=name&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4', function(data) {
+    //data is the JSON string
 });
 
 var photoreference = data.results.photos.photo_reference;
