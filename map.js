@@ -1,68 +1,89 @@
- 
-     function initMap() {
-        var pyrmont = {lat: 37.771, lng: -122.401662};
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: pyrmont,
-          zoom: 15
-        });
+var map;
+var infowindow;
+var type = 'restaurant';
+var currentLocation;
 
-        infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch({
-          location: pyrmont,
-          radius: 1000,
-          type: ['restaurant|store']
-        }, callback);
-      }
+window.onload = function(){
+  initMap();
 
-      function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-          }
-        }
-      }
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: currentLocation,
+    zoom: 15
+  });
 
-      function createMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-        });
+  infoWindow = new google.maps.InfoWindow();
+  getCurrentLocation();
+}
 
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
-        });
-      }
+function getPlacesNearby(){
+  var config = {
+      location: currentLocation,
+      radius: 500,
+      type: type
+  }
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(config, onPlacesSuccess);
+}
 
-
-
-   
-
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        console.log(pos);
-        var infoWindow = new google.maps.InfoWindow({map: map});
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
-        map.setCenter(pos);
-      }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-      });
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
+function onPlacesSuccess(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+    console.log(results);
+    for (var i = 0; i < results.length; i++) {
+      // console.log('ref: ', results[i].photos.photo_reference);
+      // console.log('html: ', results[i].photos.html_attributions);
+      console.log(results[i].photos[0]);
+      createMarker(results[i]);
     }
+  }
+}
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
+   
+function getCurrentLocation(){
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onPositionSuccess, function(error) {
+      console.log(error.message);
+      handleLocationError(true);
+    });
+  } else {
+    handleLocationError();
+  }
+}
+function handleLocationError(browserHasGeolocation) {
+    if (browserHasGeolocation){
+      console.log('Error: The Geolocation service failed.');
+    } else {
+      console.log('Browser doesnt support Geolocation');
+    }
+}
+
+function onPositionSuccess(position) {
+  currentLocation = {
+    lat: position.coords.latitude,
+    lng: position.coords.longitude
+  };
+  console.log(currentLocation)
+  var infoWindow = new google.maps.InfoWindow({map: map});
+  infoWindow.setPosition(currentLocation);
+  infoWindow.setContent('Location found.');
+  map.setCenter(currentLocation);
+  getPlacesNearby();
+
+}
 }
