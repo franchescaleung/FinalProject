@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
+h3{
+    font-family: Lobster;
+}
+
 
 #maintitle{
     font-color: blue;
@@ -59,6 +63,10 @@ body{
 
 
 /*map*/
+.navbar{
+    width: 100%;
+
+}
 .navigator{
     display: inline-block;
     width: 24%;
@@ -68,7 +76,7 @@ body{
     padding: none;
     color: gray;
     background-color: gray;
-    height: 100px;
+    height: 150px;
 }
 .div{
 
@@ -110,13 +118,10 @@ body{
     bottom: 10%;
 }
 /*GO/homepage*/
-#navbar {
-    width:100%;
-}
 .navigator{
 
     display: inline-block;
-    width: 24%;
+    width: 23.2%;
     font-size: 20px;
     list-style: none;
     margin: none;
@@ -124,6 +129,9 @@ body{
     color: gray;
     background-color: gray;
     height: 100px;
+    width:100%;
+
+    margin-right: 0px;
 }
 
 .div{
@@ -131,15 +139,9 @@ body{
     text-align: center;
 }
 
-.prof{
-    margin: -2px;
-    padding-top: none;
-    padding-bottom: none;
-    font-size: 20px;
-    text-align: center;
-}
+
 .icon{
-    margin: -2px;
+    margin: 15px;
     display: inline-block;
     width:40px;
     height: 40px;
@@ -153,7 +155,7 @@ body{
 }
 .style-icon{
     display: inline-block;
-    padding-top: none;
+    padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 25px;
     padding-right: 25px;

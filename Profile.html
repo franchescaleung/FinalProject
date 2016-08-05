@@ -29,6 +29,10 @@
   </head>
 
   <body>
+    <div id= "signout">
+      <button onclick = "googleSignout()">Signout</button>
+    </div>
+
   	<div id = "name">
   		<p id = "nameui"></p>
       <p id = "email"></p>
@@ -40,25 +44,25 @@
   		<h3 class = "trip">put locations here <h3>
   		
   	</div>
-    <div id= "signout">
-      <button onclick = "googleSignout()">Google Signout</button>
-    </div>
-
-     <div class= 'style-icon'>
+     <nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class= 'style-icon'>
+      <!-- Profile icon -->
       <form action="Profile.html">
-       <br><p class='prof'> Profile</p><input type="image" class= 'icon' src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTtrSgqX40jckZU2dJOcnFX-GJS0bzOc8bzkMTtGc606PCdWZKHItTHxQ"></br>
-     </form>
+       <input type="image" class= 'icon' src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTtrSgqX40jckZU2dJOcnFX-GJS0bzOc8bzkMTtGc606PCdWZKHItTHxQ">
    </div style-icon>
    <div class= 'style-icon'>
+   </form>
+    <!-- Categories icon -->
      <form action="Selection.html">
-       <br><p class='select'> Categories</p><input type="image" class= 'icon' src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-128.png"></br>
+       <input type="image" class= 'icon' src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-128.png">
      </form>   
-     </div style-icon>
-     <div class= 'style-icon'>
+    </div style-icon>
+    <div class= 'style-icon'>
+      <!-- Map icon -->
      <form action="GO.html">
-       <br><p class='GO'> Map</p><input type="image" class= 'icon' src="http://marz.kau.edu.sa/Images/525/bebo/WindowsMapsHelper.png"></br>
+       <input type="image" class= 'icon' src="http://marz.kau.edu.sa/Images/525/bebo/WindowsMapsHelper.png">
      </form>   
-     </div style-icon>
-      
+    </div style-icon>
+  </nav>
   </body>
 </html>
