@@ -10,8 +10,8 @@ body{
 
 .place {
     display: inline-block;
-    width: 190px; 
-    margin: 15px;
+    width: 43%; 
+    margin: 10px;
 }
 .image {
     display: block;
