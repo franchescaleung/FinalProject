@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
+h3{
+    font-family: Lobster;
+}
+
 
 #maintitle{
     font-color: blue;
@@ -121,6 +125,9 @@ body{
     color: gray;
     background-color: gray;
     height: 100px;
+    width:100%;
+
+    margin-right: 0px;
 }
 
 .div{
