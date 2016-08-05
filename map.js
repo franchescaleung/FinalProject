@@ -103,6 +103,24 @@ function onPositionSuccess(position) {
   map.setCenter(currentLocation);
   getPlacesNearby();
   
+}
+}
 
-}
-}
+
+$('#nature').click(function() {
+  type = 'park';
+});
+$('#shopping').click(function() {
+  type = 'food';
+});
+$('#food').click(function() {
+  type = 'food';
+});
+$('#popularattractions').click(function() {
+  type = 'food';
+$('#museums').click(function() {
+  type = 'museum';
+});
+$('#all').click(function() {
+  type = 'point_of_interest';
+});
