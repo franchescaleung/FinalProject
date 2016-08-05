@@ -21,7 +21,6 @@ window.onload = function(){
 
 
 function firebaseInit() {
-
     // Initialize the FirebaseUI Widget using Firebase.
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
@@ -32,11 +31,13 @@ function firebaseInit() {
             user = user;
             console.log(user);
             user.getToken().then(function(accessToken) {
-                console.log("User signed in!");
+                console.log('signed in');
             });
         } else { // User is signed out.
             user = null;
-            console.log('havent signed in yet');
+            console.log('signed out');
+            // window.location = "Login_Page_GO.html";
+            // redirect to login page;
         }
     }, function(error) {
         console.log(error);
