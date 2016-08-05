@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
-h1{
-	font-family: Lobster;
-	text-align: center;
-	font-size: 50px;
-    color: blue
+
+#maintitle{
+    font-color: blue;
+    font-family: Lobster;
+    font-size: 50px;
+    text-align: center;
 }
 
 #map{
@@ -85,8 +86,6 @@ body{
 }
 
 /*selection*/
-body {
-}
 #select{
     text-align: center;
     font-size: 30px;
