@@ -21,9 +21,9 @@ var name = cruise;
 // var photoreference = data.results.photos.photo_reference;
 
 
-$.getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=latitude,longitude&radius=500&type=type&name=name&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4', function(data) {
-    //data is the JSON string
-});
+// $.getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=latitude,longitude&radius=500&type=type&name=name&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4', function(data) {
+//     //data is the JSON string
+// 	var photoreference = data.results.photos.photo_reference;
+// });
 
-var photoreference = data.results.photos.photo_reference;
 
