@@ -4,7 +4,7 @@
 
 var map;
 var infoWindow;
-var type = 'restaurant|store|cafe|food';
+var type = 'food';
 var currentLocation;
 
 window.onload = function(){
@@ -23,7 +23,7 @@ function initMap() {
 function getPlacesNearby(){
   var config = {
       location: currentLocation,
-      radius: 1000,
+      radius: 200,
       type: type
   }
   var service = new google.maps.places.PlacesService(map);
