@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family= Oswald');
+
+h1{
+	font-family: Lobster;
+	text-align: center;
+	font-size: 30px;
+    color: black;
+}
+
+#name{
+	background-color: #DEB887;
+	height: 100px;
+	font-family: Oswald;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+body{
+	color: black;
+}
+#alltrips{
+	font-size: 20px;
+	color: black;
+}
+#nameui{
+	font-family: Oswald;
+	font-size: 20px;
+	margin-left: 20px;
+	color: black;
+}
+#email{
+	font-family: Oswald;
+	font-size: 20px;
+	margin-left: 20px;
+	color: black;
+}

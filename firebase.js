@@ -4,7 +4,7 @@ var config = {
     apiKey: "AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4",
     authDomain: "goventure-a3dc4.firebaseapp.com",
     databaseURL: "https://goventure-a3dc4.firebaseio.com",
-    storageBucket: ""
+    storageBucket: "goventure-a3dc4.appspot.com"
 };
 // goventure-a3dc4.appspot.com
 var uiConfig = {
@@ -36,8 +36,6 @@ function firebaseInit() {
         } else { // User is signed out.
             user = null;
             console.log('signed out');
-            // window.location = "Login_Page_GO.html";
-            // redirect to login page;
         }
     }, function(error) {
         console.log(error);
