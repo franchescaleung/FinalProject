@@ -15,7 +15,6 @@ function initMap() {
     center: currentLocation,
     zoom: 15
   });
-
   infoWindow = new google.maps.InfoWindow();
   getCurrentLocation();
 
@@ -74,7 +73,6 @@ function handleLocationError(browserHasGeolocation) {
       console.log('Browser doesnt support Geolocation');
     }
 }
-
 function onPositionSuccess(position) {
   currentLocation = {
     lat: position.coords.latitude,
