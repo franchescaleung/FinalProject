@@ -4,7 +4,7 @@
 
 var map;
 var infowindow;
-var type = 'restaurant';
+var type = 'restaurant|store|cafe|food';
 var currentLocation;
 
 window.onload = function(){
@@ -38,6 +38,7 @@ function onPlacesSuccess(results, status) {
       // console.log('html: ', results[i].photos.html_attributions);
       console.log(results[i].photos[0]);
       createMarker(results[i]);
+
     }
   }
 }
@@ -84,6 +85,7 @@ function onPositionSuccess(position) {
   infoWindow.setContent('Location found.');
   map.setCenter(currentLocation);
   getPlacesNearby();
+  
 
 }
 }
