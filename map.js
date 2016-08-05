@@ -1,6 +1,6 @@
  
      function initMap() {
-        var pyrmont = getCurrentPosition();
+        var pyrmont = {lat: 37.771, lng: -122.40166;
 
         map = new google.maps.Map(document.getElementById('map'), {
           center: pyrmont,
