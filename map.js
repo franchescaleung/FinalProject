@@ -4,12 +4,11 @@
 
 var map;
 var infoWindow;
-var type = 'restaurant';
+var type = 'restaurant|store|cafe|food';
 var currentLocation;
 
 window.onload = function(){
   initMap();
-}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -18,6 +17,7 @@ function initMap() {
   });
   infoWindow = new google.maps.InfoWindow();
   getCurrentLocation();
+
 }
 
 function getPlacesNearby(){
@@ -38,6 +38,7 @@ function onPlacesSuccess(results, status) {
       // console.log('html: ', results[i].photos.html_attributions);
       console.log(results[i].photos[0]);
       createMarker(results[i]);
+
     }
   }
 }
@@ -65,7 +66,6 @@ function getCurrentLocation(){
     handleLocationError();
   }
 }
-
 function handleLocationError(browserHasGeolocation) {
     if (browserHasGeolocation){
       console.log('Error: The Geolocation service failed.');
@@ -84,5 +84,7 @@ function onPositionSuccess(position) {
   infoWindow.setContent('Location found.');
   map.setCenter(currentLocation);
   getPlacesNearby();
+  
 
+}
 }
