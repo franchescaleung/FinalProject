@@ -107,20 +107,20 @@ function onPositionSuccess(position) {
 }
 
 
-$('#nature').click(function() {
-  type = 'park';
-});
-$('#shopping').click(function() {
-  type = 'food';
-});
-$('#food').click(function() {
-  type = 'food';
-});
-$('#popularattractions').click(function() {
-  type = 'food';
-$('#museums').click(function() {
-  type = 'museum';
-});
-$('#all').click(function() {
-  type = 'point_of_interest';
-});
+// $('#nature').click(function() {
+//   type = 'park';
+// });
+// $('#shopping').click(function() {
+//   type = 'shopping_mall';
+// });
+// $('#food').click(function() {
+//   type = 'food';
+// });
+// $('#popularattractions').click(function() {
+//   type = 'food';
+// $('#museums').click(function() {
+//   type = 'museum';
+// });
+// $('#all').click(function() {
+//   type = 'point_of_interest';
+// });
