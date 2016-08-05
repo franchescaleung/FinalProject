@@ -28,7 +28,7 @@ function getPlacesNearby(){
   // }
   // var service = new google.maps.places.PlacesService(map);
   // service.nearbySearch(config, onPlacesSuccess);
-  var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=latitude,longitude&radius=500&type=type&name=name&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4';
+  var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=currentLocation&radius=500&type=type&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4';
   $.ajax({
     url: url,
     headers: { 'Access-Control-Allow-Origin': '*' },
