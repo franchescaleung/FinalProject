@@ -12,7 +12,7 @@
         service.nearbySearch({
           location: pyrmont,
           radius: 1000,
-          type: ['nearbySearch']
+          type: ['restaurant|store']
         }, callback);
       }
 
@@ -47,6 +47,7 @@ if (navigator.geolocation) {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
+        console.log(pos);
         var infoWindow = new google.maps.InfoWindow({map: map});
         infoWindow.setPosition(pos);
         infoWindow.setContent('Location found.');
