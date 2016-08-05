@@ -1,18 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 
-
-#select{
-	margin-top: 10px;
-	margin-bottom: 0px;
-	font-family: Lobster;
-}
-
 #search{
 	margin-bottom: 0px;
 	margin-top: 0px; 
 	padding: none;
-	font-family: Oswald;
+	font-family: Lobster;
 }
 
 body{
@@ -26,6 +19,7 @@ body{
 	padding-bottom: none;
 	margin-bottom: -10px;
 }
+
 .selection{
 	margin-left: 35px;
 	margin-top: 5px;
