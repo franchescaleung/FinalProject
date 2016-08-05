@@ -118,14 +118,10 @@ body{
     bottom: 10%;
 }
 /*GO/homepage*/
-<<<<<<< HEAD
-=======
-
->>>>>>> fe46de220d921aa1036ed2367e01258e820ec044
 .navigator{
 
     display: inline-block;
-    width: 100%;
+    width: 23.2%;
     font-size: 20px;
     list-style: none;
     margin: none;
