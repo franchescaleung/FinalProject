@@ -4,7 +4,7 @@
 
 var map;
 var infowindow;
-var types = ['restaurant'];
+var type = 'restaurant';
 var currentLocation;
 
 window.onload = function(){
@@ -19,14 +19,13 @@ function initMap() {
 
   infoWindow = new google.maps.InfoWindow();
   getCurrentLocation();
-  getPlacesNearby();
 }
 
 function getPlacesNearby(){
   var config = {
       location: currentLocation,
       radius: 500,
-      type: types
+      type: type
   }
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch(config, onPlacesSuccess);
@@ -34,8 +33,11 @@ function getPlacesNearby(){
 
 function onPlacesSuccess(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
-    debugger;
+    console.log(results);
     for (var i = 0; i < results.length; i++) {
+      // console.log('ref: ', results[i].photos.photo_reference);
+      // console.log('html: ', results[i].photos.html_attributions);
+      console.log(results[i].photos[0]);
       createMarker(results[i]);
     }
   }
@@ -78,10 +80,11 @@ function onPositionSuccess(position) {
     lat: position.coords.latitude,
     lng: position.coords.longitude
   };
-  debugger;
+  console.log(currentLocation)
   var infoWindow = new google.maps.InfoWindow({map: map});
   infoWindow.setPosition(currentLocation);
   infoWindow.setContent('Location found.');
   map.setCenter(currentLocation);
-  console.log(currentLocation);
+  getPlacesNearby();
+
 }
