@@ -3,7 +3,7 @@
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 var map;
-var infowindow;
+var infoWindow;
 var type = 'restaurant|store|cafe|food';
 var currentLocation;
 
@@ -18,6 +18,7 @@ function initMap() {
 
   infoWindow = new google.maps.InfoWindow();
   getCurrentLocation();
+
 }
 
 function getPlacesNearby(){
@@ -51,8 +52,8 @@ function createMarker(place) {
   });
 
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
-    infowindow.open(map, this);
+    infoWindow.setContent(place.name);
+    infoWindow.open(map, this);
   });
 }
    
