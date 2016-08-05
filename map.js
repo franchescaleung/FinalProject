@@ -24,7 +24,7 @@ function initMap() {
 function getPlacesNearby(){
   var config = {
       location: currentLocation,
-      radius: 500,
+      radius: 1000,
       type: type
   }
   var service = new google.maps.places.PlacesService(map);
