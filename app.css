@@ -21,7 +21,6 @@ body{
     background-color: orange;
     position: absolute;
     z-index: -1;
-
 }
 
 /*profile*/
@@ -69,7 +68,6 @@ body{
 /*map*/
 .navbar{
     width: 100%;
-
     bottom: 0;
     position: fixed;
 
