@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
-@import url('https://fonts.googleapis.com/css?family= Oswald');
 
 h3{
     font-family: Lobster;
@@ -18,9 +17,14 @@ h3{
     width: 100%;
 }
 body{
+<<<<<<< HEAD
     background-color: orange;
     position: absolute;
     /*z-index: -1;*/
+=======
+    background-color: orange
+
+>>>>>>> 64b8e1848a234b65899fc3b4782a2093cb3f47c7
 }
 
 /*profile*/
@@ -37,7 +41,6 @@ body{
 .trip {
     display: inline-block;
     margin-left: 20px;
-    font-family: Arial;
 }
 
 /*nearby*/
@@ -68,11 +71,14 @@ body{
 /*map*/
 .navbar{
     width: 100%;
+<<<<<<< HEAD
     bottom: 0;
     position: fixed;
     overflow: scroll;
 
 }
+=======
+>>>>>>> 64b8e1848a234b65899fc3b4782a2093cb3f47c7
 
 }
 .navigator{
@@ -87,12 +93,11 @@ body{
     height: 150px;
 }
 .div{
+
     width: 10;
     text-align: center;
 }
-li {
-    border-right: 1px solid black;
-}
+
 .nearby {
     display: inline-block;
 }
@@ -111,7 +116,6 @@ li {
 }
 #search {
     font-size: 30px;
-    font-family: Lobster;
     text-align: center;
     margin-bottom:20px;
     padding-top: none;
@@ -176,4 +180,5 @@ li {
     font-size: 20px;
     text-align: center;
     margin: -2px;
+
 }
