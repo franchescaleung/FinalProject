@@ -1,7 +1,13 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
+var config = {
+    apiKey: "AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4",
+    authDomain: "goventure-a3dc4.firebaseapp.com",
+    databaseURL: "https://goventure-a3dc4.firebaseio.com",
+    storageBucket: "goventure-a3dc4.appspot.com"
+};
+// goventure-a3dc4.appspot.com
 var map;
 var infoWindow;
 var type = 'food';
@@ -10,6 +16,11 @@ var currentLocation;
 window.onload = function(){
   window.setTimeout(initMap, 500);
   // initMap();
+
+var url = "https://goventure-a3dc4.firebaseio.com/places";
+var firebaseRef = new Firebase(url);
+
+
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -63,9 +74,10 @@ function onPlacesSuccess(results, status) {
       document.getElementById("fourth").innerHTML = results[3].name
       document.getElementById("fifth").innerHTML = results[4].name
       document.getElementById("sixth").innerHTML = results[5].name
+      var submit = document.getElementsByTagName('button')[0];
+      submit.onclick = writeUserData;
 
-      var icon = results[0].photos.getUrl({maxWidth: 35, maxHeight: 35});
-      console.log(icon);
+
     }
   }
 }
@@ -145,3 +157,11 @@ function onPositionSuccess(position) {
 
 // PLACE DETAILS
 // https://maps.googleapis.com/maps/api/place/details/json?reference=CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
+
+function writeUserData(evt){
+  var place = results[0].name
+
+  firebaseRef.set({places: place});
+  evt.preventDefault();
+}
+
