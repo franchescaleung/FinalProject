@@ -67,6 +67,8 @@ body{
 /*map*/
 .navbar{
     width: 100%;
+    bottom: 0;
+    position: bottom;
 
 }
 .navigator{
