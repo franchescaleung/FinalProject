@@ -17,16 +17,10 @@ h3{
     width: 100%;
 }
 body{
-<<<<<<< HEAD
     background-color: orange;
     position: absolute;
-    /*z-index: -1;*/
-=======
-    background-color: orange
-
->>>>>>> 64b8e1848a234b65899fc3b4782a2093cb3f47c7
+    background-color: orange;
 }
-
 /*profile*/
 #name {
     margin-left: 20px;
@@ -71,15 +65,9 @@ body{
 /*map*/
 .navbar{
     width: 100%;
-<<<<<<< HEAD
     bottom: 0;
     position: fixed;
     overflow: scroll;
-
-}
-=======
->>>>>>> 64b8e1848a234b65899fc3b4782a2093cb3f47c7
-
 }
 .navigator{
     display: inline-block;
