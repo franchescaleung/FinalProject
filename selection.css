@@ -12,6 +12,7 @@ body{
 	background-image: url("LILYY.jpg");
 	width:100%;
 	height: 100%;
+	
 }
 #submit{
 	margin-left: 40px;
@@ -25,3 +26,9 @@ body{
 	margin-top: 5px;
 	font-family: Oswald;
 }
+.navbar{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+

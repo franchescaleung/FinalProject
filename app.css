@@ -18,7 +18,9 @@ h3{
     width: 100%;
 }
 body{
-    background-color: orange
+    background-color: orange;
+    position: absolute;
+    z-index: -1;
 
 }
 
@@ -84,7 +86,6 @@ body{
     height: 150px;
 }
 .div{
-
     width: 10;
     text-align: center;
 }
@@ -179,5 +180,4 @@ li {
     font-size: 20px;
     text-align: center;
     margin: -2px;
-
 }
