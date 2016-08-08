@@ -20,7 +20,7 @@ h3{
 body{
     background-color: orange;
     position: absolute;
-    z-index: -1;
+    /*z-index: -1;*/
 }
 
 /*profile*/
@@ -70,6 +70,7 @@ body{
     width: 100%;
     bottom: 0;
     position: fixed;
+    overflow: scroll;
 
 }
 
@@ -164,15 +165,10 @@ li {
 }
 .style-icon{
     display: inline-block;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 25px;
-    padding-right: 25px;
     background-color: #D7DAFF;
-    margin: -8px;
+    margin: -2px;
     text-align: center;
-    width: 23%;
-    margin-top: 20px;
+    width: 33%;
 }
 .GO{
     padding-top: none;
