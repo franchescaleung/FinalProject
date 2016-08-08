@@ -24,8 +24,3 @@ body{
 .desciption {
     display: block;
 }
-.navbar{
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-}
