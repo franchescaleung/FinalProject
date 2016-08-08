@@ -17,10 +17,10 @@ h3{
     width: 100%;
 }
 body{
-    background-color: orange
-
+    background-color: orange;
+    position: absolute;
+    background-color: orange;
 }
-
 /*profile*/
 #name {
     margin-left: 20px;
@@ -65,7 +65,9 @@ body{
 /*map*/
 .navbar{
     width: 100%;
-
+    bottom: 0;
+    position: fixed;
+    overflow: scroll;
 }
 .navigator{
     display: inline-block;
@@ -155,15 +157,10 @@ body{
 }
 .style-icon{
     display: inline-block;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
     background-color: #D7DAFF;
-    margin: -8px;
+    margin: -2px;
     text-align: center;
-    width: 23%;
-    margin-top: 20px;
+    width: 33%;
 }
 .GO{
     padding-top: none;
