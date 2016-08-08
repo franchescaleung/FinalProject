@@ -8,7 +8,8 @@ var type = 'food';
 var currentLocation;
 
 window.onload = function(){
-  initMap();
+  window.setTimeout(initMap, 500);
+  // initMap();
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -51,12 +52,17 @@ function getPlacesNearby(){
 function onPlacesSuccess(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     console.log(results);
-    for (var i = 0; i < results.length; i++) {
+    for (var i = 0; i < 6; i++) {
       // console.log('ref: ', results[i].photos.photo_reference);
       // console.log('html: ', results[i].photos.html_attributions);
-      console.log(results[i].photos[0]);
+      console.log(results[0].name);
       createMarker(results[i]);
-
+      document.getElementById("first").innerHTML = results[0].name
+      document.getElementById("second").innerHTML = results[1].name
+      document.getElementById("third").innerHTML = results[2].name
+      document.getElementById("fourth").innerHTML = results[3].name
+      document.getElementById("fifth").innerHTML = results[4].name
+      document.getElementById("sixth").innerHTML = results[5].name
     }
   }
 }
@@ -124,3 +130,7 @@ function onPositionSuccess(position) {
 // $('#all').click(function() {
 //   type = 'point_of_interest';
 // });
+
+
+//Places nearby
+
