@@ -66,7 +66,10 @@ function onPlacesSuccess(results, status) {
     for (var i = 0; i < 6; i++) {
       // console.log('ref: ', results[i].photos.photo_reference);
       // console.log('html: ', results[i].photos.html_attributions);
-      console.log(results[0].name);
+
+      console.log(results[i].name);
+
+
       createMarker(results[i]);
       document.getElementById("first").innerHTML = results[0].name
       document.getElementById("second").innerHTML = results[1].name
@@ -77,6 +80,8 @@ function onPlacesSuccess(results, status) {
       var submit = document.getElementsByTagName('button')[0];
       submit.onclick = writeUserData;
 
+      // var icon = results[0].photos.getUrl({maxWidth: 35, maxHeight: 35});
+      // console.log(icon);
 
     }
   }

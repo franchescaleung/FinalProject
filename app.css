@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
-@import url('https://fonts.googleapis.com/css?family= Oswald');
-
-h3{
-    font-family: Lobster;
-}
 
 
 #maintitle{
@@ -36,7 +31,6 @@ body{
 .trip {
     display: inline-block;
     margin-left: 20px;
-    font-family: Arial;
 }
 
 /*nearby*/
@@ -85,9 +79,7 @@ body{
     width: 10;
     text-align: center;
 }
-li {
-    border-right: 1px solid black;
-}
+
 .nearby {
     display: inline-block;
 }
@@ -106,7 +98,6 @@ li {
 }
 #search {
     font-size: 30px;
-    font-family: Lobster;
     text-align: center;
     margin-bottom:20px;
     padding-top: none;
@@ -126,7 +117,7 @@ li {
 .navigator{
 
     display: inline-block;
-    width: 23.2%;
+    width: 24%;
     font-size: 20px;
     list-style: none;
     margin: none;
@@ -134,16 +125,12 @@ li {
     color: gray;
     background-color: gray;
     height: 100px;
-    width:100%;
-
-    margin-right: 0px;
 }
 
 .div{
     width: 10;
     text-align: center;
 }
-
 
 .icon{
     margin: 15px;
@@ -160,7 +147,7 @@ li {
 }
 .style-icon{
     display: inline-block;
-    padding-top: 10px;
+    padding-top: none;
     padding-bottom: 10px;
     padding-left: 25px;
     padding-right: 25px;
