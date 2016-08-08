@@ -8,7 +8,8 @@ var type = 'food';
 var currentLocation;
 
 window.onload = function(){
-  initMap();
+  window.setTimeout(initMap, 500);
+  // initMap();
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -51,12 +52,20 @@ function getPlacesNearby(){
 function onPlacesSuccess(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     console.log(results);
-    for (var i = 0; i < results.length; i++) {
+    for (var i = 0; i < 6; i++) {
       // console.log('ref: ', results[i].photos.photo_reference);
       // console.log('html: ', results[i].photos.html_attributions);
-      console.log(results[i].photos[0]);
+      console.log(results[0].name);
       createMarker(results[i]);
+      document.getElementById("first").innerHTML = results[0].name
+      document.getElementById("second").innerHTML = results[1].name
+      document.getElementById("third").innerHTML = results[2].name
+      document.getElementById("fourth").innerHTML = results[3].name
+      document.getElementById("fifth").innerHTML = results[4].name
+      document.getElementById("sixth").innerHTML = results[5].name
 
+      var icon = results[0].photos.getUrl({maxWidth: 35, maxHeight: 35});
+      console.log(icon);
     }
   }
 }
@@ -124,3 +133,15 @@ function onPositionSuccess(position) {
 // $('#all').click(function() {
 //   type = 'point_of_interest';
 // });
+
+
+//Places nearby
+
+// PLACE SEARCH
+// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&name=cruise&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
+
+// PLACE PHOTO
+// https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRfAAAAOm3L00Tsa2WQt_arfTf8BC_SP0F3h2mYdN4X4UtcpyHeENX5t3ewImnBkXZyVZUPZvNYgivOm_YFMqZdqM9qSHnnzztnKM8XexvenDmgr9-D40ZhtoEF76M3Nw2r4-oQEhDq6wTasev_M-Ne3KiJCPzZGhTNuvc45zE_bfm5fKGcnBLqtvcXsg&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
+
+// PLACE DETAILS
+// https://maps.googleapis.com/maps/api/place/details/json?reference=CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
