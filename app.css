@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
-h3{
-    font-family: Lobster;
-}
-
 
 #maintitle{
     font-color: blue;
@@ -17,10 +13,10 @@ h3{
     width: 100%;
 }
 body{
-    background-color: orange;
-    position: absolute;
-    background-color: orange;
+    background-color: orange
+
 }
+
 /*profile*/
 #name {
     margin-left: 20px;
@@ -65,9 +61,7 @@ body{
 /*map*/
 .navbar{
     width: 100%;
-    bottom: 0;
-    position: fixed;
-    overflow: scroll;
+
 }
 .navigator{
     display: inline-block;
@@ -123,7 +117,7 @@ body{
 .navigator{
 
     display: inline-block;
-    width: 23.2%;
+    width: 24%;
     font-size: 20px;
     list-style: none;
     margin: none;
@@ -131,16 +125,12 @@ body{
     color: gray;
     background-color: gray;
     height: 100px;
-    width:100%;
-
-    margin-right: 0px;
 }
 
 .div{
     width: 10;
     text-align: center;
 }
-
 
 .icon{
     margin: 15px;
@@ -157,10 +147,15 @@ body{
 }
 .style-icon{
     display: inline-block;
+    padding-top: none;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
     background-color: #D7DAFF;
-    margin: -2px;
+    margin: -8px;
     text-align: center;
-    width: 33%;
+    width: 23%;
+    margin-top: 20px;
 }
 .GO{
     padding-top: none;
