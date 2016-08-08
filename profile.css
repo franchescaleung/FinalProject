@@ -37,3 +37,9 @@ body{
 #signout{
 	padding-left: 300px;
 }
+
+.navbar{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
