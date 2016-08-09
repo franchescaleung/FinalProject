@@ -4,16 +4,12 @@
 
 var map;
 var infoWindow;
-var type = 'food';
+var type= '';
 var currentLocation;
 
 window.onload = function(){
   window.setTimeout(initMap, 500);
-  // initMap();
-
 }
-
-
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -22,7 +18,9 @@ function initMap() {
   });
   infoWindow = new google.maps.InfoWindow();
   getCurrentLocation();
+  // clicker();
 }
+
 
 function getPlacesNearby(){
   // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + currentLocation.lat + ',' + currentLocation.lng + '&radius=500&type='+type+'&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM';
@@ -31,11 +29,13 @@ function getPlacesNearby(){
   var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
 
   var request = new XMLHttpRequest();
+
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
       onPlacesSuccess(JSON.parse(request.response).results);
     }
   }
+
   request.open('GET', server);
   request.send();
   var service = new google.maps.places.PlacesService(map);
@@ -50,29 +50,23 @@ function onPlacesSuccess(results) {
       var ref = results[i].photos[0].photo_reference;
       getPhoto(ref);
       console.log(results[i].name);
-      createMarker(results[i]);
-      document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
-      
+      createMarker(results[i]);      
       document.getElementById("first").innerHTML = results[0].name
       document.getElementById("second").innerHTML = results[1].name
       document.getElementById("third").innerHTML = results[2].name
       document.getElementById("fourth").innerHTML = results[3].name
       document.getElementById("fifth").innerHTML = results[4].name
       document.getElementById("sixth").innerHTML = results[5].name
-      var submit = document.getElementsByTagName('button')[0];
-      submit.onclick = writeUserData;
+      // document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
     }
 }
 
 function getPhoto(ref) {
   var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref+ '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
-
   var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
-
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
-      debugger;
     }
   }
   request.open('GET', server);
@@ -85,11 +79,11 @@ function createMarker(place) {
     map: map,
     position: place.geometry.location
   });
-
   google.maps.event.addListener(marker, 'click', function() {
     infoWindow.setContent(place.name);
     infoWindow.open(map, this);
   });
+
 }
    
 function getCurrentLocation(){
@@ -121,8 +115,29 @@ function onPositionSuccess(position) {
   map.setCenter(currentLocation);
   getPlacesNearby();
   
+
 }
-}
+
+function clicker(){
+    document.getElementById("nature").onclick=function(){
+      type= str.replace('',"park");
+    };
+    document.getElementById("shopping").onclick=function(){
+       type= str.replace('',"shopping_mall");
+    };
+    document.getElementById("food").onclick=function() {
+       type= str.replace('',"food");
+    };
+    document.getElementById("popularattractions").onclick=function() {
+       type= str.replace('',"food");
+    };
+    document.getElementById("museums").onclick=function() {
+     type= str.replace('',"museum");
+    };
+    document.getElementById("all").onclick=function(){
+     type= str.replace('',"point_of_interest");
+    };
+
 
 // $('#nature').click(function() {
 //   type = 'park';
@@ -144,6 +159,7 @@ function onPositionSuccess(position) {
 
 
 
+
 //Places nearby
 
 // PLACE SEARCH
@@ -157,7 +173,7 @@ function onPositionSuccess(position) {
 
 
 function PlaceNames(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
     console.log(results);
     for (var i = 0; i < 6; i++) {
           document.getElementById("first").innerHTML = results[0].name
@@ -187,4 +203,3 @@ function AddPlace(results, status) {
   }
 }
 
- 
