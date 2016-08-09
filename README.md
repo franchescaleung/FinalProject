@@ -22,8 +22,10 @@ Explore!
   
  
 #To Use:
-1. Clone repo.
-2. 
+1. Head to https://franchescaleung.github.io/login.html
+2. Sign into your google account.
+3. Look around your current location or go search up a city to add places to your profile!
+4. Plan your own trip!
 
 #Challenges:
 - working on same css page
@@ -32,20 +34,18 @@ Explore!
 
 #User Stories:
 A user can...
-    Make the app work within the Bay Area
-    Functioning firebase accounts
-    Have it work on mobile
-    categories
-    Descriptions of places
-
+    use thier google accounts to sign in
+    use the app on their phones
+    search up locations or look for places around them
+    save places to their profile
 #Stretch Goals:
     -Link to yelp
     -Sharing to social media and inviting people        
     -Accessibility             
-    -map
     -notifications
 
 Future goals:
+-adding a plus button to locations on the map 
 
 Resources:
 Google Maps API Developer
