@@ -59,17 +59,17 @@ function onPlacesSuccess(results) {
       var ref = results[i].photos[0].photo_reference;
       getPhoto(ref);
       console.log(results[i].name);
+
       createMarker(results[i]);
       document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
       
       }
+
 }
 
 function getPhoto(ref) {
   var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref+ '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
-
   var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
-
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
@@ -86,7 +86,6 @@ function createMarker(place) {
     map: map,
     position: place.geometry.location
   });
-
   google.maps.event.addListener(marker, 'click', function() {
     infoWindow.setContent(place.name);
     infoWindow.open(map, this);
@@ -127,26 +126,26 @@ function onPositionSuccess(position) {
 }
 
 
-// function clicker(){
+function clicker(){
 
-// document.getElementById("nature").onclick=function(){
-//   type= str.replace('',"park");
-// };
-// document.getElementById("shopping").onclick=function(){
-//    type= str.replace('',"shopping_mall");
-// };
-// document.getElementById("food").onclick=function() {
-//    type= str.replace('',"food");
-// };
-// document.getElementById("popularattractions").onclick=function() {
-//    type= str.replace('',"food");
-// };
-// document.getElementById("museums").onclick=function() {
-//  type= str.replace('',"museum");
-// };
-// document.getElementById("all").onclick=function(){
-//  type= str.replace('',"point_of_interest");
-// };
+document.getElementById("nature").onclick=function(){
+  type= str.replace('',"park");
+};
+document.getElementById("shopping").onclick=function(){
+   type= str.replace('',"shopping_mall");
+};
+document.getElementById("food").onclick=function() {
+   type= str.replace('',"food");
+};
+document.getElementById("popularattractions").onclick=function() {
+   type= str.replace('',"food");
+};
+document.getElementById("museums").onclick=function() {
+ type= str.replace('',"museum");
+};
+document.getElementById("all").onclick=function(){
+ type= str.replace('',"point_of_interest");
+};
 
 
 // $('#nature').click(function() {
@@ -168,9 +167,6 @@ function onPositionSuccess(position) {
 // });
 
 
-function writeUserData(evt){
-  var place = results[0].name
-
 //Places nearby
 
 // PLACE SEARCH
@@ -185,7 +181,7 @@ function writeUserData(evt){
 
 
 function PlaceNames(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
     console.log(results);
     for (var i = 0; i < 6; i++) {
           document.getElementById("first").innerHTML = results[0].name
