@@ -1,13 +1,7 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-var config = {
-    apiKey: "AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM",
-    authDomain: "goventure-a3dc4.firebaseapp.com",
-    databaseURL: "https://goventure-a3dc4.firebaseio.com",
-    storageBucket: "goventure-a3dc4.appspot.com"
-};
-// goventure-a3dc4.appspot.com
+
 var map;
 var infoWindow;
 var type = 'food';
@@ -17,8 +11,7 @@ window.onload = function(){
   window.setTimeout(initMap, 500);
   // initMap();
 
-var url = "https://goventure-a3dc4.firebaseio.com/places";
-var firebaseRef = new Firebase(url);
+}
 
 
 
@@ -48,6 +41,7 @@ function getPlacesNearby(){
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch(config, onPlacesSuccess);
   service.nearbySearch(config, PlaceNames);
+  service.nearbySearch(config, AddPlace);
 }
 
 function onPlacesSuccess(results) {
@@ -148,10 +142,7 @@ function onPositionSuccess(position) {
 //   type = 'point_of_interest';
 // });
 
-<<<<<<< HEAD
-function writeUserData(evt){
-  var place = results[0].name
-=======
+
 
 //Places nearby
 
@@ -164,7 +155,6 @@ function writeUserData(evt){
 // PLACE DETAILS
 // https://maps.googleapis.com/maps/api/place/details/json?reference=CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
 
->>>>>>> 3788c99bef8cd26387ad02754adc00b7167dedca
 
 function PlaceNames(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -180,5 +170,21 @@ function PlaceNames(results, status) {
   }
 }
 
+function AddPlace(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+      document.getElementById("one").onclick = function(){
+      document.getElementById("trip1") = results[0].name;
+      document.getElementById("two").onclick = function(){
+      document.getElementById("trip2") = results[0].name;
+      document.getElementById("three").onclick = function(){
+      document.getElementById("trip3") = results[0].name;
+      document.getElementById("four").onclick = function(){
+      document.getElementById("trip4") = results[0].name;
+      document.getElementById("five").onclick = function(){
+      document.getElementById("trip5") = results[0].name;
+      document.getElementById("six").onclick = function(){
+      document.getElementById("trip6") = results[0].name;
+  }
+}
 
-
+ 

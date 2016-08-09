@@ -6,7 +6,6 @@ var config = {
     databaseURL: "https://goventure-a3dc4.firebaseio.com",
     storageBucket: "goventure-a3dc4.appspot.com"
 };
-// goventure-a3dc4.appspot.com
 var uiConfig = {
     'signInSuccessUrl': 'GO.html',
     'signInOptions': [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
