@@ -17,7 +17,6 @@ function initMap() {
   });
   infoWindow = new google.maps.InfoWindow();
   getCurrentLocation();
-  // clicker();
 }
 function getPlacesNearby(){
   // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + currentLocation.lat + ',' + currentLocation.lng + '&radius=500&type='+type+'&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4';
@@ -151,23 +150,29 @@ function onPositionSuccess(position) {
 
 function AddPlace(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
-    document.getElementById("one").onclick = function(){
-      document.getElementById("trip1") = results[0].name}
+<<<<<<< HEAD
+      document.getElementById("one").onclick = function(){
+        document.getElementById("trip1") = "results[0].name"
+      };
 
-    document.getElementById("two").onclick = function(){
-      document.getElementById("trip2") = results[0].name}
+      document.getElementById("two").onclick = function(){
+        document.getElementById("trip2") = "results[1].name"
+      };
 
-    document.getElementById("three").onclick = function(){
-      document.getElementById("trip3") = results[0].name}
+      document.getElementById("three").onclick = function(){
+        document.getElementById("trip3") = "results[2].name"
+      };
 
-    document.getElementById("four").onclick = function(){
-      document.getElementById("trip4") = results[0].name}
+      document.getElementById("four").onclick = function(){
+        document.getElementById("trip4") = "results[3].name"
+      };
 
-    document.getElementById("five").onclick = function(){
-      document.getElementById("trip5") = results[0].name}
+      document.getElementById("five").onclick = function(){
+        document.getElementById("trip5") = "results[4].name"
+      };
 
-    document.getElementById("six").onclick = function(){
-      document.getElementById("trip6") = results[0].name}
-  }
+      document.getElementById("six").onclick = function(){
+        document.getElementById("trip6") = "results[5].name"
+      };
 }
 
