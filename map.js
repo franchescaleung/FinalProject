@@ -1,7 +1,13 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
+var config = {
+    apiKey: "AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4",
+    authDomain: "goventure-a3dc4.firebaseapp.com",
+    databaseURL: "https://goventure-a3dc4.firebaseio.com",
+    storageBucket: "goventure-a3dc4.appspot.com"
+};
+// goventure-a3dc4.appspot.com
 var map;
 var infoWindow;
 var type = 'food';
@@ -10,6 +16,11 @@ var currentLocation;
 window.onload = function(){
   window.setTimeout(initMap, 500);
   // initMap();
+
+var url = "https://goventure-a3dc4.firebaseio.com/places";
+var firebaseRef = new Firebase(url);
+
+
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -60,21 +71,9 @@ function onPlacesSuccess(results, status) {
       console.log(results[i].name);
 
       createMarker(results[i]);
-      // createMarker(results[1]);
-      // createMarker(results[2]);
-      // createMarker(results[3]);
-      // createMarker(results[4]);
-      // createMarker(results[5]);
-      // createMarker(results[6]);
-      // createMarker(results[7]);
-      // createMarker(results[8]);
-      // createMarker(results[9]);
-      // document.getElementById("first").innerHTML = results[0].name
-      // document.getElementById("second").innerHTML = results[1].name
-      // document.getElementById("third").innerHTML = results[2].name
-      // document.getElementById("fourth").innerHTML = results[3].name
-      // document.getElementById("fifth").innerHTML = results[4].name
-      // document.getElementById("sixth").innerHTML = results[5].name
+
+    
+
     }
   }
 }
@@ -155,6 +154,7 @@ function onPositionSuccess(position) {
 // PLACE DETAILS
 // https://maps.googleapis.com/maps/api/place/details/json?reference=CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
 
+
 function PlaceNames(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     console.log(results);
@@ -168,3 +168,6 @@ function PlaceNames(results, status) {
     }
   }
 }
+
+
+
