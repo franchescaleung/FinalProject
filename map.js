@@ -19,7 +19,7 @@ window.onload = function(){
 
 var url = "https://goventure-a3dc4.firebaseio.com/places";
 var firebaseRef = new Firebase(url);
-
+}
 
 
 function initMap() {
@@ -32,7 +32,7 @@ function initMap() {
   // clicker();
 
 }
-}
+
 
 function getPlacesNearby(){
   // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + currentLocation.lat + ',' + currentLocation.lng + '&radius=500&type='+type+'&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM';
