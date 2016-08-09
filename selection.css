@@ -27,9 +27,19 @@ body{
 	font-family: Oswald;
 }
 
-
 .navbar{
     width: 100%;
-    position: fixed;
-    bottom: 0;
+}
+
+.style-icon{
+    display: inline-block;
+    padding-top: none;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #D7DAFF;
+    margin: -8px;
+    text-align: center;
+    width: 23%;
+    margin-top: 20px;
 }
