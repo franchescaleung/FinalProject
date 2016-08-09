@@ -2,7 +2,7 @@
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 var config = {
-    apiKey: "AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4",
+    apiKey: "AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM",
     authDomain: "goventure-a3dc4.firebaseapp.com",
     databaseURL: "https://goventure-a3dc4.firebaseio.com",
     storageBucket: "goventure-a3dc4.appspot.com"
@@ -10,7 +10,7 @@ var config = {
 // goventure-a3dc4.appspot.com
 var map;
 var infoWindow;
-var type= 'food';
+var type= '';
 var currentLocation;
 
 window.onload = function(){
@@ -29,56 +29,55 @@ function initMap() {
   });
   infoWindow = new google.maps.InfoWindow();
   getCurrentLocation();
-  clicker();
+  // clicker();
 
 }
 }
 
 function getPlacesNearby(){
-  var config = {
-      location: currentLocation,
-      radius: 1000,
-      type: type
+  // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + currentLocation.lat + ',' + currentLocation.lng + '&radius=500&type='+type+'&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM';
+  var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
+
+  var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (request.readyState == 4 && request.status == 200) {
+      onPlacesSuccess(JSON.parse(request.response).results);
+    }
   }
+  request.open('GET', server);
+  request.send();
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch(config, onPlacesSuccess);
   service.nearbySearch(config, PlaceNames);
-  // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=currentLocation&radius=500&type=type&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4';
-  // $.ajax({
-  //   url: url,
-  //   headers: { 'Access-Control-Allow-Origin': '*' },
-  //   crossDomain: true,
-  //   method: 'GET',
-  //   success: function(){
-  //     debugger;
-  //     var photoreference = data.results.photos.photo_reference;
-  //   }
-  // });
-
-  // $.getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=latitude,longitude&radius=500&type=type&name=name&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4', function(data) {
-  //   //data is the JSON string
-  //   debugger;
-  // var photoreference = data.results.photos.photo_reference;
-// });
-  // var service = new google.maps.places.PlacesService(map);
-  // service.nearbySearch(config, onPlacesSuccess);
 }
 
-function onPlacesSuccess(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
+function onPlacesSuccess(results) {
     console.log(results);
-    for (var i = 0; i < 6; i++) {
-      // console.log('ref: ', results[i].photos.photo_reference);
-      // console.log('html: ', results[i].photos.html_attributions);
-
+    for (var i = 0; i < results.length; i++) {
+      var ref = results[i].photos[0].photo_reference;
+      getPhoto(ref);
       console.log(results[i].name);
-
       createMarker(results[i]);
+      document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
+      
+      }
+}
 
-    
+function getPhoto(ref) {
+  var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref+ '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
 
+  var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
+
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (request.readyState == 4 && request.status == 200) {
+      debugger;
     }
   }
+  request.open('GET', server);
+  request.send();
 }
 
 function createMarker(place) {
@@ -127,28 +126,50 @@ function onPositionSuccess(position) {
 
 }
 
-function clicker(){
 
-document.getElementById("nature").onclick=function(){
-  type= str.replace('',"park");
-};
-document.getElementById("shopping").onclick=function(){
-   type= str.replace('',"shopping_mall");
-};
-document.getElementById("food").onclick=function() {
-   type= str.replace('',"food");
-};
-document.getElementById("popularattractions").onclick=function() {
-   type= str.replace('',"food");
-};
-document.getElementById("museums").onclick=function() {
- type= str.replace('',"museum");
-};
-document.getElementById("all").onclick=function(){
- type= str.replace('',"point_of_interest");
-};
+// function clicker(){
+
+// document.getElementById("nature").onclick=function(){
+//   type= str.replace('',"park");
+// };
+// document.getElementById("shopping").onclick=function(){
+//    type= str.replace('',"shopping_mall");
+// };
+// document.getElementById("food").onclick=function() {
+//    type= str.replace('',"food");
+// };
+// document.getElementById("popularattractions").onclick=function() {
+//    type= str.replace('',"food");
+// };
+// document.getElementById("museums").onclick=function() {
+//  type= str.replace('',"museum");
+// };
+// document.getElementById("all").onclick=function(){
+//  type= str.replace('',"point_of_interest");
+// };
 
 
+// $('#nature').click(function() {
+//   type = 'park';
+// });
+// $('#shopping').click(function() {
+//   type = 'shopping_mall';
+// });
+// $('#food').click(function() {
+//   type = 'food';
+// });
+// $('#popularattractions').click(function() {
+//   type = 'food';
+// $('#museums').click(function() {
+//   type = 'museum';
+// });
+// $('#all').click(function() {
+//   type = 'point_of_interest';
+// });
+
+
+function writeUserData(evt){
+  var place = results[0].name
 
 //Places nearby
 
@@ -160,6 +181,7 @@ document.getElementById("all").onclick=function(){
 
 // PLACE DETAILS
 // https://maps.googleapis.com/maps/api/place/details/json?reference=CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
+
 
 
 function PlaceNames(results, status) {

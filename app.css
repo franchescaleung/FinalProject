@@ -33,31 +33,6 @@ body{
     margin-left: 20px;
 }
 
-/*nearby*/
-/*#nearby {
-    text-align: center;
-    font-size: 30px;
-    margin-top: 10px;
-    padding-top: 20px;
-}
-
-.place {
-    display: inline-block;
-    width: 165px; 
-    margin: 10px;
-}
-.image {
-    display: block;
-    width: 100%;
-}
-.add {
-    width: 20px;
-}
-.desciption {
-    display: block;
-}*/
-
-
 /*map*/
 .navbar{
     width: 100%;
