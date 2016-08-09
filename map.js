@@ -56,15 +56,14 @@ function onPlacesSuccess(results) {
       var ref = results[i].photos[0].photo_reference;
       getPhoto(ref);
       console.log(results[i].name);
-      createMarker(results[i]);
-      document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
-      
+      createMarker(results[i]);      
       document.getElementById("first").innerHTML = results[0].name
       document.getElementById("second").innerHTML = results[1].name
       document.getElementById("third").innerHTML = results[2].name
       document.getElementById("fourth").innerHTML = results[3].name
       document.getElementById("fifth").innerHTML = results[4].name
       document.getElementById("sixth").innerHTML = results[5].name
+      document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
       var submit = document.getElementsByTagName('button')[0];
       submit.onclick = writeUserData;
     }
@@ -72,9 +71,7 @@ function onPlacesSuccess(results) {
 
 function getPhoto(ref) {
   var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref+ '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
-
   var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
-
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
@@ -91,7 +88,6 @@ function createMarker(place) {
     map: map,
     position: place.geometry.location
   });
-
   google.maps.event.addListener(marker, 'click', function() {
     infoWindow.setContent(place.name);
     infoWindow.open(map, this);
@@ -148,37 +144,9 @@ function onPositionSuccess(position) {
 //   type = 'point_of_interest';
 // });
 
-<<<<<<< HEAD
 function writeUserData(evt){
   var place = results[0].name
-=======
 
-//Places nearby
-
-// PLACE SEARCH
-// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&name=cruise&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
-
-// PLACE PHOTO
-// https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRfAAAAOm3L00Tsa2WQt_arfTf8BC_SP0F3h2mYdN4X4UtcpyHeENX5t3ewImnBkXZyVZUPZvNYgivOm_YFMqZdqM9qSHnnzztnKM8XexvenDmgr9-D40ZhtoEF76M3Nw2r4-oQEhDq6wTasev_M-Ne3KiJCPzZGhTNuvc45zE_bfm5fKGcnBLqtvcXsg&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
-
-// PLACE DETAILS
-// https://maps.googleapis.com/maps/api/place/details/json?reference=CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
-
->>>>>>> 3788c99bef8cd26387ad02754adc00b7167dedca
-
-function PlaceNames(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    console.log(results);
-    for (var i = 0; i < 6; i++) {
-          document.getElementById("first").innerHTML = results[0].name
-          document.getElementById("second").innerHTML = results[1].name
-          document.getElementById("third").innerHTML = results[2].name
-          document.getElementById("fourth").innerHTML = results[3].name
-          document.getElementById("fifth").innerHTML = results[4].name
-          document.getElementById("sixth").innerHTML = results[5].name
-    }
-  }
-}
 
 
 
