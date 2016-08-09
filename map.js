@@ -1,13 +1,7 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-var config = {
-    apiKey: "AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM",
-    authDomain: "goventure-a3dc4.firebaseapp.com",
-    databaseURL: "https://goventure-a3dc4.firebaseio.com",
-    storageBucket: "goventure-a3dc4.appspot.com"
-};
-// goventure-a3dc4.appspot.com
+
 var map;
 var infoWindow;
 var type= '';
@@ -17,10 +11,6 @@ window.onload = function(){
   window.setTimeout(initMap, 500);
 }
 
-var url = "https://goventure-a3dc4.firebaseio.com/places";
-var firebaseRef = new Firebase(url);
-
-
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: currentLocation,
@@ -29,7 +19,6 @@ function initMap() {
   infoWindow = new google.maps.InfoWindow();
   getCurrentLocation();
   // clicker();
-
 }
 
 
@@ -52,9 +41,11 @@ function getPlacesNearby(){
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch(config, onPlacesSuccess);
   service.nearbySearch(config, PlaceNames);
+  service.nearbySearch(config, AddPlace);
 }
 
 function onPlacesSuccess(results) {
+<<<<<<< HEAD
   console.log(results);
   for (var i = 0; i < results.length; i++) {
     var ref = results[i].photos[0].photo_reference;
@@ -69,7 +60,6 @@ function onPlacesSuccess(results) {
     document.getElementById("sixth").innerHTML = results[5].name
     // document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
   }
-}
 
 function getPhoto(ref) {
   var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref+ '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
@@ -168,7 +158,6 @@ function clicker(){
 // });
 
 
-
 function PlaceNames(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     console.log(results);
@@ -180,6 +169,23 @@ function PlaceNames(results, status) {
           document.getElementById("fifth").innerHTML = results[4].name
           document.getElementById("sixth").innerHTML = results[5].name
     }
+  }
+}
+
+function AddPlace(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+      document.getElementById("one").onclick = function(){
+      document.getElementById("trip1") = results[0].name;
+      document.getElementById("two").onclick = function(){
+      document.getElementById("trip2") = results[0].name;
+      document.getElementById("three").onclick = function(){
+      document.getElementById("trip3") = results[0].name;
+      document.getElementById("four").onclick = function(){
+      document.getElementById("trip4") = results[0].name;
+      document.getElementById("five").onclick = function(){
+      document.getElementById("trip5") = results[0].name;
+      document.getElementById("six").onclick = function(){
+      document.getElementById("trip6") = results[0].name;
   }
 }
 
