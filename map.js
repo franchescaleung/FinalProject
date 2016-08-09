@@ -10,7 +10,6 @@ var currentLocation;
 window.onload = function(){
   window.setTimeout(initMap, 500);
 }
-
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: currentLocation,
@@ -20,8 +19,6 @@ function initMap() {
   getCurrentLocation();
   // clicker();
 }
-
-
 function getPlacesNearby(){
   // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + currentLocation.lat + ',' + currentLocation.lng + '&radius=500&type='+type+'&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM';
   var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
@@ -31,9 +28,9 @@ function getPlacesNearby(){
     if (request.readyState == 4 && request.status == 200) {
       onPlacesSuccess(JSON.parse(request.response).results);
     }
+    request.open('GET', server);
+    request.send();
   }
-  request.open('GET', server);
-  request.send();
   // var service = new google.maps.places.PlacesService(map);
   // service.nearbySearch(config, onPlacesSuccess);
   // service.nearbySearch(config, PlaceNames);
@@ -47,13 +44,13 @@ function onPlacesSuccess(results) {
     getPhoto(ref);
     console.log(results[i].name);
     createMarker(results[i]);      
-    document.getElementById("first").innerHTML = results[0].name
-    document.getElementById("second").innerHTML = results[1].name
-    document.getElementById("third").innerHTML = results[2].name
-    document.getElementById("fourth").innerHTML = results[3].name
-    document.getElementById("fifth").innerHTML = results[4].name
-    document.getElementById("sixth").innerHTML = results[5].name
-    // document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
+    // document.getElementById("first").innerHTML = results[0].name
+    // document.getElementById("second").innerHTML = results[1].name
+    // document.getElementById("third").innerHTML = results[2].name
+    // document.getElementById("fourth").innerHTML = results[3].name
+    // document.getElementById("fifth").innerHTML = results[4].name
+    // document.getElementById("sixth").innerHTML = results[5].name
+    //document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
   }
 }
 
@@ -67,6 +64,8 @@ function getPhoto(ref) {
       request.send();
     }
   }
+  request.open('GET', server);
+  request.send();
 }
 
 function createMarker(place) {
@@ -79,7 +78,6 @@ function createMarker(place) {
     infoWindow.setContent(place.name);
     infoWindow.open(map, this);
   });
-
 }
    
 function getCurrentLocation(){
@@ -111,7 +109,6 @@ function onPositionSuccess(position) {
   map.setCenter(currentLocation);
   getPlacesNearby();
   
-
 }
 
 // function clicker(){
@@ -152,23 +149,23 @@ function PlaceNames(results, status) {
 
 function AddPlace(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
-      document.getElementById("one").onclick = function(){
-        document.getElementById("trip1") = results[0].name}
+    document.getElementById("one").onclick = function(){
+      document.getElementById("trip1") = results[0].name}
 
-      document.getElementById("two").onclick = function(){
-        document.getElementById("trip2") = results[0].name}
+    document.getElementById("two").onclick = function(){
+      document.getElementById("trip2") = results[0].name}
 
-      document.getElementById("three").onclick = function(){
-        document.getElementById("trip3") = results[0].name};
+    document.getElementById("three").onclick = function(){
+      document.getElementById("trip3") = results[0].name}
 
-      document.getElementById("four").onclick = function(){
-        document.getElementById("trip4") = results[0].name};
+    document.getElementById("four").onclick = function(){
+      document.getElementById("trip4") = results[0].name}
 
-      document.getElementById("five").onclick = function(){
-        document.getElementById("trip5") = results[0].name};
+    document.getElementById("five").onclick = function(){
+      document.getElementById("trip5") = results[0].name}
 
-      document.getElementById("six").onclick = function(){
-        document.getElementById("trip6") = results[0].name};
+    document.getElementById("six").onclick = function(){
+      document.getElementById("trip6") = results[0].name}
   }
 }
 
