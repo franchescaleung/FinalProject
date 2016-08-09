@@ -14,8 +14,7 @@ var type = 'food';
 var currentLocation;
 
 window.onload = function(){
-  //window.setTimeout(initMap, 500);
-  initMap();
+  window.setTimeout(initMap, 500);
 }
 
 var url = "https://goventure-a3dc4.firebaseio.com/places";
@@ -38,11 +37,13 @@ function getPlacesNearby(){
   var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
 
   var request = new XMLHttpRequest();
+
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
       onPlacesSuccess(JSON.parse(request.response).results);
     }
   }
+
   request.open('GET', server);
   request.send();
   var service = new google.maps.places.PlacesService(map);
@@ -63,9 +64,7 @@ function onPlacesSuccess(results) {
       document.getElementById("fourth").innerHTML = results[3].name
       document.getElementById("fifth").innerHTML = results[4].name
       document.getElementById("sixth").innerHTML = results[5].name
-      document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
-      var submit = document.getElementsByTagName('button')[0];
-      submit.onclick = writeUserData;
+      // document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
     }
 }
 
@@ -75,7 +74,6 @@ function getPhoto(ref) {
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
-      debugger;
     }
   }
   request.open('GET', server);
@@ -124,7 +122,17 @@ function onPositionSuccess(position) {
   getPlacesNearby();
   
 }
-}
+
+
+// function PlaceNames() {
+//   if (status == google.maps.places.PlaceServicesStatus.OK) {
+//     for (var i = 0; i < results.length; i++) {
+//       var ref = results[i].photos[0].photo_reference;
+//       getPhoto(ref);
+//       console.log(results[i].name);
+//       createMarker(results[i]);
+//   }
+// }
 
 // $('#nature').click(function() {
 //   type = 'park';
@@ -143,9 +151,6 @@ function onPositionSuccess(position) {
 // $('#all').click(function() {
 //   type = 'point_of_interest';
 // });
-
-function writeUserData(evt){
-  var place = results[0].name
 
 
 
