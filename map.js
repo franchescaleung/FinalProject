@@ -10,7 +10,7 @@ var config = {
 // goventure-a3dc4.appspot.com
 var map;
 var infoWindow;
-var type = 'food';
+var type= '';
 var currentLocation;
 
 window.onload = function(){
@@ -19,7 +19,7 @@ window.onload = function(){
 
 var url = "https://goventure-a3dc4.firebaseio.com/places";
 var firebaseRef = new Firebase(url);
-
+}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -28,7 +28,10 @@ function initMap() {
   });
   infoWindow = new google.maps.InfoWindow();
   getCurrentLocation();
+  // clicker();
+
 }
+
 
 function getPlacesNearby(){
   // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + currentLocation.lat + ',' + currentLocation.lng + '&radius=500&type='+type+'&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM';
@@ -90,6 +93,7 @@ function createMarker(place) {
     infoWindow.setContent(place.name);
     infoWindow.open(map, this);
   });
+
 }
    
 function getCurrentLocation(){
@@ -121,18 +125,30 @@ function onPositionSuccess(position) {
   map.setCenter(currentLocation);
   getPlacesNearby();
   
+
 }
 
+function clicker(){
 
-// function PlaceNames() {
-//   if (status == google.maps.places.PlaceServicesStatus.OK) {
-//     for (var i = 0; i < results.length; i++) {
-//       var ref = results[i].photos[0].photo_reference;
-//       getPhoto(ref);
-//       console.log(results[i].name);
-//       createMarker(results[i]);
-//   }
-// }
+document.getElementById("nature").onclick=function(){
+  type= str.replace('',"park");
+};
+document.getElementById("shopping").onclick=function(){
+   type= str.replace('',"shopping_mall");
+};
+document.getElementById("food").onclick=function() {
+   type= str.replace('',"food");
+};
+document.getElementById("popularattractions").onclick=function() {
+   type= str.replace('',"food");
+};
+document.getElementById("museums").onclick=function() {
+ type= str.replace('',"museum");
+};
+document.getElementById("all").onclick=function(){
+ type= str.replace('',"point_of_interest");
+};
+
 
 // $('#nature').click(function() {
 //   type = 'park';
@@ -154,4 +170,17 @@ function onPositionSuccess(position) {
 
 
 
-
+function PlaceNames(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    console.log(results);
+    for (var i = 0; i < 6; i++) {
+          document.getElementById("first").innerHTML = results[0].name
+          document.getElementById("second").innerHTML = results[1].name
+          document.getElementById("third").innerHTML = results[2].name
+          document.getElementById("fourth").innerHTML = results[3].name
+          document.getElementById("fifth").innerHTML = results[4].name
+          document.getElementById("sixth").innerHTML = results[5].name
+    }
+  }
+}
+}
