@@ -19,7 +19,7 @@ window.onload = function(){
 
 var url = "https://goventure-a3dc4.firebaseio.com/places";
 var firebaseRef = new Firebase(url);
-}
+
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -55,20 +55,20 @@ function getPlacesNearby(){
 }
 
 function onPlacesSuccess(results) {
-    console.log(results);
-    for (var i = 0; i < results.length; i++) {
-      var ref = results[i].photos[0].photo_reference;
-      getPhoto(ref);
-      console.log(results[i].name);
-      createMarker(results[i]);      
-      document.getElementById("first").innerHTML = results[0].name
-      document.getElementById("second").innerHTML = results[1].name
-      document.getElementById("third").innerHTML = results[2].name
-      document.getElementById("fourth").innerHTML = results[3].name
-      document.getElementById("fifth").innerHTML = results[4].name
-      document.getElementById("sixth").innerHTML = results[5].name
-      // document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
-    }
+  console.log(results);
+  for (var i = 0; i < results.length; i++) {
+    var ref = results[i].photos[0].photo_reference;
+    getPhoto(ref);
+    console.log(results[i].name);
+    createMarker(results[i]);      
+    document.getElementById("first").innerHTML = results[0].name
+    document.getElementById("second").innerHTML = results[1].name
+    document.getElementById("third").innerHTML = results[2].name
+    document.getElementById("fourth").innerHTML = results[3].name
+    document.getElementById("fifth").innerHTML = results[4].name
+    document.getElementById("sixth").innerHTML = results[5].name
+    // document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
+  }
 }
 
 function getPhoto(ref) {
@@ -95,8 +95,8 @@ function createMarker(place) {
   });
 
 }
-   
-function getCurrentLocation(){
+  
+function getCurrentLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(onPositionSuccess, function(error) {
       console.log(error.message);
@@ -124,31 +124,30 @@ function onPositionSuccess(position) {
   infoWindow.setContent('Location found.');
   map.setCenter(currentLocation);
   getPlacesNearby();
-  
-
 }
 
+//selecting
 function clicker(){
 
-document.getElementById("nature").onclick=function(){
-  type= str.replace('',"park");
-};
-document.getElementById("shopping").onclick=function(){
-   type= str.replace('',"shopping_mall");
-};
-document.getElementById("food").onclick=function() {
-   type= str.replace('',"food");
-};
-document.getElementById("popularattractions").onclick=function() {
-   type= str.replace('',"food");
-};
-document.getElementById("museums").onclick=function() {
- type= str.replace('',"museum");
-};
-document.getElementById("all").onclick=function(){
- type= str.replace('',"point_of_interest");
-};
-
+  document.getElementById("nature").onclick=function(){
+    type= str.replace('',"park");
+  };
+  document.getElementById("shopping").onclick=function(){
+     type= str.replace('',"shopping_mall");
+  };
+  document.getElementById("food").onclick=function() {
+     type= str.replace('',"food");
+  };
+  document.getElementById("popularattractions").onclick=function() {
+     type= str.replace('',"food");
+  };
+  document.getElementById("museums").onclick=function() {
+   type= str.replace('',"museum");
+  };
+  document.getElementById("all").onclick=function(){
+   type= str.replace('',"point_of_interest");
+  };
+}
 
 // $('#nature').click(function() {
 //   type = 'park';
@@ -183,4 +182,4 @@ function PlaceNames(results, status) {
     }
   }
 }
-}
+
