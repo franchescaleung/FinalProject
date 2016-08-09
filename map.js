@@ -43,33 +43,11 @@ function getPlacesNearby(){
       onPlacesSuccess(JSON.parse(request.response).results);
     }
   }
-<<<<<<< HEAD
   request.open('GET', server);
   request.send();
-=======
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch(config, onPlacesSuccess);
   service.nearbySearch(config, PlaceNames);
-  // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=currentLocation&radius=500&type=type&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4';
-  // $.ajax({
-  //   url: url,
-  //   headers: { 'Access-Control-Allow-Origin': '*' },
-  //   crossDomain: true,
-  //   method: 'GET',
-  //   success: function(){
-  //     debugger;
-  //     var photoreference = data.results.photos.photo_reference;
-  //   }
-  // });
-
-  // $.getJSON('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=latitude,longitude&radius=500&type=type&name=name&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4', function(data) {
-  //   //data is the JSON string
-  //   debugger;
-  // var photoreference = data.results.photos.photo_reference;
-// });
-  // var service = new google.maps.places.PlacesService(map);
-  // service.nearbySearch(config, onPlacesSuccess);
->>>>>>> 3788c99bef8cd26387ad02754adc00b7167dedca
 }
 
 function onPlacesSuccess(results) {
@@ -77,13 +55,9 @@ function onPlacesSuccess(results) {
     for (var i = 0; i < results.length; i++) {
       var ref = results[i].photos[0].photo_reference;
       getPhoto(ref);
-      
-
       console.log(results[i].name);
-
       createMarker(results[i]);
-
-      document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref+ '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
+      document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
       
       document.getElementById("first").innerHTML = results[0].name
       document.getElementById("second").innerHTML = results[1].name
