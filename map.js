@@ -10,7 +10,7 @@ var config = {
 // goventure-a3dc4.appspot.com
 var map;
 var infoWindow;
-var type = 'food';
+var type= 'food';
 var currentLocation;
 
 window.onload = function(){
@@ -29,6 +29,9 @@ function initMap() {
   });
   infoWindow = new google.maps.InfoWindow();
   getCurrentLocation();
+  clicker();
+
+}
 }
 
 function getPlacesNearby(){
@@ -89,6 +92,7 @@ function createMarker(place) {
     infoWindow.setContent(place.name);
     infoWindow.open(map, this);
   });
+
 }
    
 function getCurrentLocation(){
@@ -120,27 +124,30 @@ function onPositionSuccess(position) {
   map.setCenter(currentLocation);
   getPlacesNearby();
   
-}
+
 }
 
+function clicker(){
 
-// $('#nature').click(function() {
-//   type = 'park';
-// });
-// $('#shopping').click(function() {
-//   type = 'shopping_mall';
-// });
-// $('#food').click(function() {
-//   type = 'food';
-// });
-// $('#popularattractions').click(function() {
-//   type = 'food';
-// $('#museums').click(function() {
-//   type = 'museum';
-// });
-// $('#all').click(function() {
-//   type = 'point_of_interest';
-// });
+document.getElementById("nature").onclick=function(){
+  type= str.replace('',"park");
+};
+document.getElementById("shopping").onclick=function(){
+   type= str.replace('',"shopping_mall");
+};
+document.getElementById("food").onclick=function() {
+   type= str.replace('',"food");
+};
+document.getElementById("popularattractions").onclick=function() {
+   type= str.replace('',"food");
+};
+document.getElementById("museums").onclick=function() {
+ type= str.replace('',"museum");
+};
+document.getElementById("all").onclick=function(){
+ type= str.replace('',"point_of_interest");
+};
+
 
 
 //Places nearby
@@ -168,6 +175,4 @@ function PlaceNames(results, status) {
     }
   }
 }
-
-
-
+}

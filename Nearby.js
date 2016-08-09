@@ -7,12 +7,12 @@
 // PLACE DETAILS
 // https://maps.googleapis.com/maps/api/place/details/json?reference=CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
 
-var latitude = -33.8670522;
-var longitude = 151.1957362;
-var type = restaurant;
-var name = cruise;
+// var latitude = -33.8670522;
+// var longitude = 151.1957362;
+// var type = restaurant;
+// var name = cruise;
 
-// $.ajax({
+// // $.ajax({
 //   dataType: 'json',
 //   url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=latitude,longitude&radius=500&type=type&name=name&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4',
 //   success: function(data)
