@@ -51,12 +51,6 @@ function onPlacesSuccess(results) {
       getPhoto(ref);
       console.log(results[i].name);
       createMarker(results[i]);      
-      document.getElementById("first").innerHTML = results[0].name
-      document.getElementById("second").innerHTML = results[1].name
-      document.getElementById("third").innerHTML = results[2].name
-      document.getElementById("fourth").innerHTML = results[3].name
-      document.getElementById("fifth").innerHTML = results[4].name
-      document.getElementById("sixth").innerHTML = results[5].name
       // document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
     }
 }
