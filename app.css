@@ -33,9 +33,6 @@ body{
 }
 
 /*map*/
-.navbar{
-    width: 100%;
-}
 .navigator{
     display: inline-block;
     width: 24%;
@@ -130,6 +127,10 @@ body{
     width: 23%;
     margin-top: 20px;
 }
+.navbar{
+    width: 100%;
+}
+
 .GO{
     padding-top: none;
     padding-bottom: none;

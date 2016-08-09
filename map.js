@@ -151,10 +151,10 @@ function PlaceNames(results, status) {
 function AddPlace(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
       document.getElementById("one").onclick = function(){
-        document.getElementById("trip1") = results[0].name};
+        document.getElementById("trip1") = results[0].name}
 
       document.getElementById("two").onclick = function(){
-        document.getElementById("trip2") = results[0].name};
+        document.getElementById("trip2") = results[0].name}
 
       document.getElementById("three").onclick = function(){
         document.getElementById("trip3") = results[0].name};
