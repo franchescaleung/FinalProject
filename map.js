@@ -25,27 +25,22 @@ function initMap() {
 function getPlacesNearby(){
   // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + currentLocation.lat + ',' + currentLocation.lng + '&radius=500&type='+type+'&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM';
   var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
-
   var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
-
   var request = new XMLHttpRequest();
-
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
       onPlacesSuccess(JSON.parse(request.response).results);
     }
   }
-
   request.open('GET', server);
   request.send();
-  var service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(config, onPlacesSuccess);
-  service.nearbySearch(config, PlaceNames);
-  service.nearbySearch(config, AddPlace);
+  // var service = new google.maps.places.PlacesService(map);
+  // service.nearbySearch(config, onPlacesSuccess);
+  // service.nearbySearch(config, PlaceNames);
+  // service.nearbySearch(config, AddPlace);
 }
 
 function onPlacesSuccess(results) {
-<<<<<<< HEAD
   console.log(results);
   for (var i = 0; i < results.length; i++) {
     var ref = results[i].photos[0].photo_reference;
@@ -60,6 +55,7 @@ function onPlacesSuccess(results) {
     document.getElementById("sixth").innerHTML = results[5].name
     // document.getElementsByClassName("image").src = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
   }
+}
 
 function getPhoto(ref) {
   var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref+ '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
@@ -67,10 +63,10 @@ function getPhoto(ref) {
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
+      request.open('GET', server);
+      request.send();
     }
   }
-  request.open('GET', server);
-  request.send();
 }
 
 function createMarker(place) {
@@ -174,7 +170,7 @@ function PlaceNames(results, status) {
 
 function AddPlace(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
-      document.getElementById("one").onclick = function(){
+    document.getElementById("one").onclick = function() {
       document.getElementById("trip1") = results[0].name;
       document.getElementById("two").onclick = function(){
       document.getElementById("trip2") = results[0].name;
