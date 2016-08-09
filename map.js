@@ -14,12 +14,12 @@ var type = 'food';
 var currentLocation;
 
 window.onload = function(){
-  window.setTimeout(initMap, 500);
-  // initMap();
+  //window.setTimeout(initMap, 500);
+  initMap();
+}
 
 var url = "https://goventure-a3dc4.firebaseio.com/places";
 var firebaseRef = new Firebase(url);
-
 
 
 function initMap() {
