@@ -28,6 +28,7 @@ function getPlacesNearby(){
   }
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch(config, onPlacesSuccess);
+  service.nearbySearch(config, PlaceNames);
   // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=currentLocation&radius=500&type=type&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4';
   // $.ajax({
   //   url: url,
@@ -58,17 +59,22 @@ function onPlacesSuccess(results, status) {
 
       console.log(results[i].name);
 
-
       createMarker(results[i]);
-      document.getElementById("first").innerHTML = results[0].name
-      document.getElementById("second").innerHTML = results[1].name
-      document.getElementById("third").innerHTML = results[2].name
-      document.getElementById("fourth").innerHTML = results[3].name
-      document.getElementById("fifth").innerHTML = results[4].name
-      document.getElementById("sixth").innerHTML = results[5].name
-
-      // var icon = results[0].photos.getUrl({maxWidth: 35, maxHeight: 35});
-      // console.log(icon);
+      // createMarker(results[1]);
+      // createMarker(results[2]);
+      // createMarker(results[3]);
+      // createMarker(results[4]);
+      // createMarker(results[5]);
+      // createMarker(results[6]);
+      // createMarker(results[7]);
+      // createMarker(results[8]);
+      // createMarker(results[9]);
+      // document.getElementById("first").innerHTML = results[0].name
+      // document.getElementById("second").innerHTML = results[1].name
+      // document.getElementById("third").innerHTML = results[2].name
+      // document.getElementById("fourth").innerHTML = results[3].name
+      // document.getElementById("fifth").innerHTML = results[4].name
+      // document.getElementById("sixth").innerHTML = results[5].name
     }
   }
 }
@@ -148,3 +154,17 @@ function onPositionSuccess(position) {
 
 // PLACE DETAILS
 // https://maps.googleapis.com/maps/api/place/details/json?reference=CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
+
+function PlaceNames(results, status) {
+  if (status === google.maps.places.PlacesServiceStatus.OK) {
+    console.log(results);
+    for (var i = 0; i < 6; i++) {
+          document.getElementById("first").innerHTML = results[0].name
+          document.getElementById("second").innerHTML = results[1].name
+          document.getElementById("third").innerHTML = results[2].name
+          document.getElementById("fourth").innerHTML = results[3].name
+          document.getElementById("fifth").innerHTML = results[4].name
+          document.getElementById("sixth").innerHTML = results[5].name
+    }
+  }
+}
