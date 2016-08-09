@@ -112,58 +112,26 @@ function onPositionSuccess(position) {
 
 }
 
-function clicker(){
-    document.getElementById("nature").onclick=function(){
-      type= str.replace('',"park");
-    };
-    document.getElementById("shopping").onclick=function(){
-       type= str.replace('',"shopping_mall");
-    };
-    document.getElementById("food").onclick=function() {
-       type= str.replace('',"food");
-    };
-    document.getElementById("popularattractions").onclick=function() {
-       type= str.replace('',"food");
-    };
-    document.getElementById("museums").onclick=function() {
-     type= str.replace('',"museum");
-    };
-    document.getElementById("all").onclick=function(){
-     type= str.replace('',"point_of_interest");
-    };
+// function clicker(){
+//     document.getElementById("nature").onclick=function(){
+//       type= str.replace('',"park");
+//     };
+//     document.getElementById("shopping").onclick=function(){
+//        type= str.replace('',"shopping_mall");
+//     };
+//     document.getElementById("food").onclick=function() {
+//        type= str.replace('',"food");
+//     };
+//     document.getElementById("popularattractions").onclick=function() {
+//        type= str.replace('',"food");
+//     };
+//     document.getElementById("museums").onclick=function() {
+//      type= str.replace('',"museum");
+//     };
+//     document.getElementById("all").onclick=function(){
+//      type= str.replace('',"point_of_interest");
+//     };
 
-
-// $('#nature').click(function() {
-//   type = 'park';
-// });
-// $('#shopping').click(function() {
-//   type = 'shopping_mall';
-// });
-// $('#food').click(function() {
-//   type = 'food';
-// });
-// $('#popularattractions').click(function() {
-//   type = 'food';
-// $('#museums').click(function() {
-//   type = 'museum';
-// });
-// $('#all').click(function() {
-//   type = 'point_of_interest';
-// });
-
-
-
-
-//Places nearby
-
-// PLACE SEARCH
-// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&name=cruise&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
-
-// PLACE PHOTO
-// https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRfAAAAOm3L00Tsa2WQt_arfTf8BC_SP0F3h2mYdN4X4UtcpyHeENX5t3ewImnBkXZyVZUPZvNYgivOm_YFMqZdqM9qSHnnzztnKM8XexvenDmgr9-D40ZhtoEF76M3Nw2r4-oQEhDq6wTasev_M-Ne3KiJCPzZGhTNuvc45zE_bfm5fKGcnBLqtvcXsg&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
-
-// PLACE DETAILS
-// https://maps.googleapis.com/maps/api/place/details/json?reference=CmRYAAAAciqGsTRX1mXRvuXSH2ErwW-jCINE1aLiwP64MCWDN5vkXvXoQGPKldMfmdGyqWSpm7BEYCgDm-iv7Kc2PF7QA7brMAwBbAcqMr5i1f4PwTpaovIZjysCEZTry8Ez30wpEhCNCXpynextCld2EBsDkRKsGhSLayuRyFsex6JA6NPh9dyupoTH3g&key=AIzaSyCn2FV22kKw7qT7V78tuaG9KiUVV9ilMD4
 
 
 function PlaceNames(results, status) {
@@ -183,17 +151,22 @@ function PlaceNames(results, status) {
 function AddPlace(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
       document.getElementById("one").onclick = function(){
-      document.getElementById("trip1") = results[0].name;
+        document.getElementById("trip1") = results[0].name};
+
       document.getElementById("two").onclick = function(){
-      document.getElementById("trip2") = results[0].name;
+        document.getElementById("trip2") = results[0].name};
+
       document.getElementById("three").onclick = function(){
-      document.getElementById("trip3") = results[0].name;
+        document.getElementById("trip3") = results[0].name};
+
       document.getElementById("four").onclick = function(){
-      document.getElementById("trip4") = results[0].name;
+        document.getElementById("trip4") = results[0].name};
+
       document.getElementById("five").onclick = function(){
-      document.getElementById("trip5") = results[0].name;
+        document.getElementById("trip5") = results[0].name};
+
       document.getElementById("six").onclick = function(){
-      document.getElementById("trip6") = results[0].name;
+        document.getElementById("trip6") = results[0].name};
   }
 }
 
