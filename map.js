@@ -173,5 +173,6 @@ function AddPlace(results, status) {
     document.getElementById("six").onclick = function(){
       document.getElementById("trip6") = "results[5].name"
     };
+  }
 }
 
