@@ -1,20 +1,22 @@
 var user;
 
-var config = {
-    apiKey: "AIzaSyA7lvHXWbDmIaPN1GEzaFH1e_qpQzMvRug",
-    authDomain: "goventure-a3dc4.firebaseapp.com",
-    databaseURL: "https://goventure-a3dc4.firebaseio.com",
-    storageBucket: "goventure-a3dc4.appspot.com"
-};
+  var config = {
+    apiKey: "AIzaSyAbzn5BJaxvdYIzkExoQHnZkq5hVIvMCeI",
+    authDomain: "explore-47a04.firebaseapp.com",
+    databaseURL: "https://explore-47a04.firebaseio.com",
+    storageBucket: "explore-47a04.appspot.com",
+  };
+
 var uiConfig = {
     'signInSuccessUrl': 'GO.html',
     'signInOptions': [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
 };
 
-firebase.initializeApp(config);
+
 
 
 window.onload = function(){
+    firebase.initializeApp(config);
     firebaseInit();
 }
 
