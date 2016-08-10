@@ -4,7 +4,7 @@
 
 var map;
 var infoWindow;
-var type= '';
+var type= 'food';
 var currentLocation;
 
 window.onload = function(){
