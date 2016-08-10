@@ -24,7 +24,7 @@ function initMap() {
 
 function getPlacesNearby(){
   // var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + currentLocation.lat + ',' + currentLocation.lng + '&radius=500&type='+type+'&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM';
-  var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
+  var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&key=AIzaSyBfCqIHLyJjWOApAsWNXCINPqwIzJnjh8s'
 
   var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
 
@@ -56,7 +56,7 @@ function onPlacesSuccess(results) {
 }
 
 function getPhoto(ref) {
-  var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref+ '&key=AIzaSyDTm_j8dbGiGrxfyXsFoxSqLmnn23_udOM'
+  var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref+ '&key=AIzaSyBfCqIHLyJjWOApAsWNXCINPqwIzJnjh8s'
   var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
