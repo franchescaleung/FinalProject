@@ -1,7 +1,7 @@
 var user;
 
   var config = {
-    apiKey: "AIzaSyAbzn5BJaxvdYIzkExoQHnZkq5hVIvMCeI",
+    apiKey: "AIzaSyA7lvHXWbDmIaPN1GEzaFH1e_qpQzMvRug",
     authDomain: "explore-47a04.firebaseapp.com",
     databaseURL: "https://explore-47a04.firebaseio.com",
     storageBucket: "explore-47a04.appspot.com",
