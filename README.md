@@ -14,7 +14,7 @@ Explore!
 
 #What problem are you trying to solve?
 
-	We are trying to make it easier for travelers and users to find places they can go to on vacation while they can save their locations to plan a roadtrip. This app can help users keep track of where they want to go in the future as well. 
+	We are trying to make it easier for travelers and users to find places they can go based on their current location. This app can help users save places where they want to go in the future as well. 
 
 
 
@@ -34,7 +34,7 @@ Explore!
 
 #User Stories:
 A user can...
-    use thier google accounts to sign in
+    use their google accounts to sign in
     use the app on their phones
     search up locations or look for places around them
     save places to their profile

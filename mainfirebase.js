@@ -1,7 +1,7 @@
 var user;
 
 var config = {
-    apiKey: "AIzaSyBfCqIHLyJjWOApAsWNXCINPqwIzJnjh8s",
+    apiKey: "AIzaSyA7lvHXWbDmIaPN1GEzaFH1e_qpQzMvRug",
     authDomain: "goventure-a3dc4.firebaseapp.com",
     databaseURL: "https://goventure-a3dc4.firebaseio.com",
     storageBucket: "goventure-a3dc4.appspot.com"
