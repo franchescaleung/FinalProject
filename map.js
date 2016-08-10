@@ -174,4 +174,5 @@ function AddPlace(results, status) {
         document.getElementById("trip6") = "results[5].name"
       };
 }
+}
 
