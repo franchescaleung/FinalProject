@@ -6,7 +6,6 @@ var user;
     databaseURL: "https://explore-47a04.firebaseio.com",
     storageBucket: "explore-47a04.appspot.com",
   };
-  firebase.initializeApp(config);
 var uiConfig = {
     'signInSuccessUrl': 'GO.html',
     'signInOptions': [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
