@@ -1,4 +1,5 @@
 window.onload = function(){
+	firebase.initializeApp(config);
     window.setTimeout(setProfileInfo, 500);
 }
 

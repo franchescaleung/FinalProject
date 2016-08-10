@@ -12,7 +12,7 @@
 
     <!-- firebase links -->
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.2.1/mainfirebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
@@ -26,15 +26,14 @@
     <script type="text/javascript" src="Profile.js"></script>
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="profile.css">
-
   </head>
 
   <body>
-    <div id= "signout">
-      <button onclick = "googleSignout()"> Signout </button>
-    </div>
 
   	<div id = "name">
+          <div id= "signout">
+      <button onclick = "googleSignout()"> Signout </button>
+    </div>
   		<p id = "nameui"></p>
       <p id = "email"></p>
   	</div>
