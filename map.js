@@ -148,7 +148,6 @@ function PlaceNames(results, status) {
 
 function AddPlace(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
-<<<<<<< HEAD
       document.getElementById("one").onclick = function(){
         document.getElementById("trip1") = "results[0].name"
       };
