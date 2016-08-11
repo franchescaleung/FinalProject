@@ -56,14 +56,14 @@ function onPlacesSuccess(resp) {
       createMarker(resp[i]);
     }
   }
+  addPlace(resp);
+}
 
   // placeNames(resp);
-  // addPlace();
-}
+  
 
 function getPhoto(ref) {
   console.log('getPhoto')
-
   var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyAbzn5BJaxvdYIzkExoQHnZkq5hVIvMCeI'
   var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
   var request = new XMLHttpRequest();
@@ -161,31 +161,32 @@ function placeNames(results) {
   }
 }
 
-function addPlace(results, status) {
+function addPlace(results) {
   console.log('addPlace')
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-      document.getElementById("one").onclick = function(){
-        document.getElementById("trip1") = results[0].name;
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+      document.getElementById("one").onclick = function hello(){
+        console.log('one is clicked');
+        document.getElementById("trip1").innerHTML = results.name;
       };
 
       document.getElementById("two").onclick = function(){
-        document.getElementById("trip2") = results[1].name;
+        document.getElementById("trip2").innerHTML = results[1].name;
       };
 
       document.getElementById("three").onclick = function(){
-        document.getElementById("trip3") = results[2].name;
+        document.getElementById("trip3").innerHTML = results[2].name;
       };
 
       document.getElementById("four").onclick = function(){
-        document.getElementById("trip4") = results[3].name;
+        document.getElementById("trip4").innerHTML = results[3].name;
       };
 
       document.getElementById("five").onclick = function(){
-        document.getElementById("trip5") = results[4].name;
+        document.getElementById("trip5").innerHTML = results[4].name;
       };
 
       document.getElementById("six").onclick = function(){
-        document.getElementById("trip6") = results[5].name;
+        document.getElementById("trip6").innerHTML = results[5].name;
       };
     }
   }
