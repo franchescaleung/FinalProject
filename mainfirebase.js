@@ -13,8 +13,6 @@ var uiConfig = {
 };
 
 
-
-
 window.onload = function(){
     firebase.initializeApp(config);
     firebaseInit();
