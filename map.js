@@ -21,17 +21,17 @@ function initMap() {
 function getPlacesNearby(){
   var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&key=AIzaSyAbzn5BJaxvdYIzkExoQHnZkq5hVIvMCeI'
 
-  var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function() {
-    if (request.readyState == 4 && request.status == 200) {
-      console.log('success');
-      onPlacesSuccess(JSON.parse(request.response).results);
-    }
-  }
-  request.open('GET', server);
-  console.log('sending request to places')
-  request.send();
+  // var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
+  // var request = new XMLHttpRequest();
+  // request.onreadystatechange = function() {
+  //   if (request.readyState == 4 && request.status == 200) {
+  //     console.log('success');
+  //     onPlacesSuccess(JSON.parse(request.response).results);
+  //   }
+  // }
+  // request.open('GET', server);
+  // console.log('sending request to places')
+  // request.send();
   // var service = new google.maps.places.PlacesService(map);
   // service.nearbySearch(config, onPlacesSuccess);
   // service.nearbySearch(config, PlaceNames);
@@ -68,6 +68,19 @@ function getPhoto(ref) {
   request.open('GET', server);
   request.send();
 }
+// function getPhoto(ref) {
+//   var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref+ '&key=AIzaSyA7lvHXWbDmIaPN1GEzaFH1e_qpQzMvRug'
+//   var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
+//   var request = new XMLHttpRequest();
+//   request.onreadystatechange = function() {
+//     if (request.readyState == 4 && request.status == 200) {
+//       request.open('GET', server);
+//       request.send();
+//     }
+//   }
+//   request.open('GET', server);
+//   request.send();
+// }
 
 function createMarker(place) {
   var placeLoc = place.geometry.location;
@@ -134,19 +147,19 @@ function onPositionSuccess(position) {
 
 
 
-// function PlaceNames(results, status) {
-//   if (status == google.maps.places.PlacesServiceStatus.OK) {
-//     console.log(results);
-//     for (var i = 0; i < 6; i++) {
-//           document.getElementById("first").innerHTML = results[0].name
-//           document.getElementById("second").innerHTML = results[1].name
-//           document.getElementById("third").innerHTML = results[2].name
-//           document.getElementById("fourth").innerHTML = results[3].name
-//           document.getElementById("fifth").innerHTML = results[4].name
-//           document.getElementById("sixth").innerHTML = results[5].name
-//     }
-//   }
-// }
+function PlaceNames(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    console.log(results);
+    for (var i = 0; i < 6; i++) {
+          document.getElementById("first").innerHTML = results[0].name
+          document.getElementById("second").innerHTML = results[1].name
+          document.getElementById("third").innerHTML = results[2].name
+          document.getElementById("fourth").innerHTML = results[3].name
+          document.getElementById("fifth").innerHTML = results[4].name
+          document.getElementById("sixth").innerHTML = results[5].name
+    }
+  }
+}
 
 function AddPlace(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {

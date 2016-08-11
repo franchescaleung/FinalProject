@@ -14,6 +14,7 @@ h1{
 	margin-left: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
+
 }
 
 body{
@@ -28,12 +29,15 @@ body{
 	font-size: 20px;
 	margin-left: 20px;
 	color: black;
+	margin-bottom: 0px;
 }
 #email{
 	font-family: Oswald;
 	font-size: 20px;
 	margin-left: 20px;
+	margin-top:0px;
 	color: black;
+	text-transform: translateY(5%);
 }
 #signout{
 	padding-left: 300px;
